@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		@font-face {
+			font-family: 'DinRegular';
+			src: url('assets/Tipografia/DINNextRoundedLTPro-Regular.otf') format('opentype');
+		}
+		body {
+			font-family: 'DinREgular'
+		}
+		.main {
+			background-color: #ffffff;
+		}
+		.primaria{
+      		background-color: #f4f4f4;
+      		overflow: hidden;
+      		padding-left: 3%;
+      		height: 7vh
+    	}
+    	.imagen{
+      		vertical-align: middle;
+      		display: inline-block;
+      		height: 100%
+    	}
+    	.back{
+      		height: 100%;
+      		float: right;
+      		width: 15%;
+      		color: white;
+      		font-size: 30px;
+      		background-color: #cccccc;
+      		box-shadow: none;
+      		border: none;
+      		outline: none
+    	}
+    	.materia{
+			padding-top: 10%;
+			padding-bottom: 10%;
+			text-align: center
+		}
+		.caption{
+			vertical-align: middle;
+			text-align: left;
+			display: inline-block;
+			width: 50%
+		}
+		.boton{
+    		border: none;
+    		color: white;
+    		padding: 12px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+			width: 40%;
+    		margin: 4px 2px;
+    		cursor: pointer;
+    		border-radius: 8px;
+			outline: none;
+			box-shadow:none;
+		}
+		.lenguaje{
+			color: white;
+			background-color: #adc700
+		}
+		.matematica{
+			color: white;
+			background-color: #674b98
+		}
+		.mate{
+			padding-top: 10%;
+			padding-bottom: 10%;
+			padding-left: 5%;
+			border-bottom: 2px solid #dbdbdb
+		}
+		.mat{
+			color: #674b98;
+			font-weight: bold;
+		}
+		.leng{
+			color: #adc700;
+			font-weight: bold;	
+		}
+		.imagen2{
+			vertical-align: middle;
+			display: inline-block;
+			height: 8vh	
+		}
+		.sumaresta{
+			background-color: #f7f7f7;
+			height: 12vh;
+			padding-left: 8%;
+			padding-top: 5%;
+			border-bottom: 2px solid #dbdbdb
+		}	
+		.forward{
+			float: right;
+			padding-right: 8vw;
+			padding-top: 2vh;
+			background-color: #f7f7f7;
+			color: grey;
+			border: none;
+			box-shadow: none;
+			font-size: 30px; 
+		}
+		.container {
+			text-align: center;
+		}
+		.parrafo{
+			margin-left: 15%;
+			margin-top: 10%
+		}
+		ul {
+  			padding-left: 10%;
+  			margin-right: 10%;
+		}
+		li{
+			color: #adc700;
+			font-size: 40px;
+			margin-bottom: 3%
+		}
+		.lista{
+			color: #545454;
+			font-size: 18px;
+			font-weight: bold;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+		.button {
+    		background-color: #adc700;
+    		border: none;
+    		color: white;
+    		padding: 20px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-size: 16px;
+    		margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 8px;
+		}
+		.text {
+			color: #674b89;
+		}
+
+		.number {
+			color: #adc700;
+		}
+
+		.imgTutorial {
+			width: 100%
+		}
+		.pagination {
+			position: relative;
+			bottom: 5px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			text-align: center;
+		}
+		.pagination__dot {
+			position: relative;
+			width: 8px;
+			height: 8px;
+			border: 2px solid gray;
+			border-radius: 100px;
+			display: inline-block;
+			cursor: pointer;
+			margin: 0 4px;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+		.pagination__next_privous {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			font-size: 5vh;
+			color: grey;
+			margin: 0 50px;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+		.pagination__dot--active {
+			background: gray;
+		}
+		.corazon{
+			width: 50px;
+			float: right;
+			margin-right: 6%
+		}
+		.paginationBottm {
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: auto;
+			text-align: center;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="main">
+			<div class="primaria">
+					<img class="imagen" src="assets/MenuPrincipal/01_icono_menu_p.png">
+					<div class="caption"><span>PRIMARIA: 1er año</span></div>
+					<button class="back"><</button>
+			</div>
+
+			<div id='home'>
+  				<div class="materia">
+					<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+					<span class="caption">PRÁCTICAS DEL LENGUAJE</span>
+					<div style="padding-top: 5%">
+						<button class="boton lenguaje" onclick="enterLeng()">Tutoriales</button>
+						<button class="boton lenguaje">Aprender jugando</button>
+					</div>
+				</div>
+				<div class="materia" style="background-color: #f7f7f7">
+					<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+					<span class="caption">MATEMÁTICA</span>
+					<div style="padding-top: 5%">
+						<button class="boton matematica" onclick="enterMath()">Tutoriales</button>
+						<button class="boton matematica">Aprender jugando</button>
+					</div>
+				</div>
+			</div>
+
+		<div id="elegirMat">
+			<div class="mate">
+				<img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+				<span class="caption mat">MATEMÁTICA</span>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+				<span class="caption">SUMA Y RESTA</span><button onclick="sumas()" class="forward">></button>
+			</div>
+		</div>
+
+		<div id="elegirLeng">
+			<div class="mate">
+				<img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+				<span class="caption leng">PRÁCTICAS DEL LENGUAJE</span>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1.png">
+				<span class="caption">Ortografía y puntuación</span><button onclick="ortografia()" class="forward">></button>
+			</div>
+		</div>
+
+		<div id="pickTutorialMat">
+			<div class="mate">
+				<img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+				<span class="caption mat">SUMA Y RESTA</span>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+				<span class="caption">TUTORIAL 1</span><button class="forward" onclick="tutorialMat()" >></button>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+				<span class="caption">TUTORIAL 2</span><button class="forward">></button>
+			</div>
+		</div>
+		
+		<div id="pickTutorialLeng">
+			<div class="mate">
+				<img class="imagen" src="assets/PracticasLenguaje/01_icono_menu_practicas.png">
+				<span class="caption leng">ORTOGRAFÍA Y PUNTUACIÓN</span>
+			</div>
+			<div class="sumaresta">
+				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1.png">
+				<span class="caption">ORTOGRAFÍA: USO DE LA “MB” / “MP” / “NV”</span><button onclick="tutorialLeng()" class="forward">></button>
+			</div>
+			<div style="background-color: white" class="sumaresta">
+				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1b.png">
+				<span class="caption">PUNTUACIÓN</span><button style="background-color: white" class="forward">></button>
+			</div>
+			<div style="background-color: white" class="sumaresta">
+				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1c.png">
+				<span class="caption">CONSEJOS Y EJERCICIOS</span><button style="background-color: white" class="forward">></button>
+			</div>
+		</div>
+
+		<div id="coverPageMat">
+				<div class="container">
+					<img src="assets/Matematica/01_icono_mat_tutorial1.png">
+					<p>
+					<span class="text">	Jazmín tiene</span> <span class="number">$25</span> <span class="text">y compra una gaseosa de </span><span class="number">$12.</span> 					
+					</p>
+					<p>
+						¿Cuánto dinero le queda?
+					</p>
+		
+					<button class="button" id="init" onclick="initTutorial()"><span>!APRENDE A RESOLVERLO!</span></button>
+				</div>
+			
+		</div>
+
+		<div id="coverPageLeng">
+			<div class="parrafo">
+				<div>
+				<p style="font-size: 17.5px; display: inline-block;">
+				<strong>¿QUÉ ES LA ORTOGRAFÍA?</strong> 					
+				</p>
+				<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<ul>
+					<li>
+					<p class="lista">
+						Es la forma correcta de escribir palabras respetando reglas.
+					</p>
+					</li>
+					<li>			
+					<p class="lista">
+						Estas reglas nos permiten identificar, por ejemplo, cuándo se usa la “c”, la “s” o la “z”; cuándo la “y” o la “ll” o cuando se usa la “v” o la “b” y ayudarnos cuando tenemos dudas sobre cuál de estas letras deberíamos usar.
+					</p>
+					</li>
+					<li>	
+					<p class="lista">
+						En este primer nivel, vamos a hacer hincapié en el uso de la MP, MB y NV.
+					</p>
+					</li>
+				</div>					
+			</div>
+		</div>
+
+		<div id="page1Mat">
+				<h3>Primera resolución posible</h3>
+
+				<p> Descomponer al <strong> 25</strong> en billetes de <strong>$10</strong> y monedas de <strong>$1.</strong> Serían dos billetes de <strong>$10</strong> y <strong>5</strong> monedas de <strong>$1.</strong></p>
+
+				<img src="assets/Matematica/01_icono_mat_tutorial1c.png" class="imgTutorial">
+				
+				<p>Luego tachan o retiran la cantidad de billetes que representan <strong>$12:</strong> </p>
+
+				<img src="assets/Matematica/01_icono_mat_tutorial1d.png" class="imgTutorial">
+
+				<p>Una vez que lo hacen, cuentan la cantidad que les quedó </p>
+
+				<img src="assets/Matematica/01_icono_mat_tutorial1e.png" class="imgTutorial">
+
+		</div>
+
+		<div id="page2Mat">
+				<h3>Segunda resolución posible</h3>
+
+				<p> Descomponer los números <strong> 25</strong> y <strong>12</strong> en <strong>“dieces” </strong>y <strong>“unos”.</strong> </p>
+
+				<img src="assets/Matematica/01_icono_mat_tutorial1f.png" class="imgTutorial">
+				
+				<p>Una vez descompuestos los números, los restan agrupando y luego suman el resultado</p>
+
+				<img src="assets/Matematica/01_icono_mat_tutorial1ff.png" class="imgTutorial">
+
+		</div>
+
+		
+		<div id="page3Mat">
+				<h3>Tercera resolución posible</h3>
+
+				<p> Componer la diferencia desde el <strong> 12</strong> hasta el <strong>25</strong>, por conteo de a <strong>1.</strong> Es decir, contar <strong>cuántos números faltan para llegar al 25</strong> y sumarlos. </p>
+
+				<img src="assets/Matematica/01_icono_mat_tutorial1g.png" class="imgTutorial">
+				
+
+		</div>
+
+		<div class="pagination" id='pagination'>
+			<div class="pagination__next_privous" id="previous">&laquo;</div>
+			<div class="pagination__dot pagination__dot--active" id="dot1"></div>
+			<div class="pagination__dot" id="dot2"></div>
+			<div class="pagination__dot" id="dot3"></div>
+			<div class="pagination__next_privous" id="next">&raquo;</div>			
+		</div>
+	
+	</div>
+	
+	<script>
+		console.log(screen)
+	let home = document.getElementById('home');
+	let elegirLeng = document.getElementById('elegirLeng')
+	let elegirMat = document.getElementById('elegirMat');
+	let pickTutorialLeng = document.getElementById('pickTutorialLeng');
+	let pickTutorialMat = document.getElementById('pickTutorialMat');
+	let coverPageLeng = document.getElementById('coverPageLeng');
+	let coverPageMat = document.getElementById('coverPageMat');
+	let page1Mat = document.getElementById('page1Mat');
+	let page2Mat = document.getElementById('page2Mat');
+	let page3Mat = document.getElementById('page3Mat');
+	let pagination = document.getElementById('pagination')
+	let dot1 = document.getElementById('dot1');
+	let dot2 = document.getElementById('dot2');
+	let dot3 = document.getElementById('dot3');
+
+	console.log(pagination.getBoundingClientRect())
+	// var elem = document.getElementById('home');
+    // elem.parentNode.removeChild(elem);
+	
+	// document.querySelector('.main').innerHTML
+	// console.log(elem, document.querySelector('.main'))
+
+	elegirLeng.style.display = 'none'
+	elegirMat.style.display = 'none'
+	pickTutorialLeng.style.display = 'none'
+	pickTutorialMat.style.display = 'none'
+	coverPageLeng.style.display = 'none'
+	coverPageMat.style.display = 'none'
+	page1Mat.style.display = 'none'
+	page2Mat.style.display = 'none'
+	page3Mat.style.display = 'none'
+	pagination.style.display = 'none'
+
+	let numPage = 0;
+	let buttonInit = document.getElementById('init')
+
+	function enterLeng() {
+		home.style.display = 'none'
+		elegirLeng.style.display = 'block'
+	}
+
+	function enterMath() {
+		home.style.display = 'none'
+		elegirMat.style.display = 'block'
+	}
+
+	function ortografia() {
+		elegirLeng.style.display = 'none'
+		pickTutorialLeng.style.display = 'block'
+	} 
+
+
+	function sumas(){
+		elegirMat.style.display = 'none'
+		pickTutorialMat.style.display = 'block'
+	}
+
+	function tutorialMat(){
+		numPage = 1
+		pickTutorialMat.style.display = 'none'
+		coverPageMat.style.display = 'block'
+	}
+
+	function tutorialLeng(){
+		numPage = 1
+		pickTutorialLeng.style.display = 'none'
+		coverPageLeng.style.display = 'block'	
+	}
+
+	function initTutorial() {
+		console.log(pagination.getBoundingClientRect())
+		console.log(screen)
+
+		numPage = 1
+		coverPageMat.style.display = 'none'
+		page1Mat.style.display = 'block'
+		pagination.style.display = 'block'
+		var coordenatePagination = pagination.getBoundingClientRect()
+		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+			pagination.style.position  = 'absolute'
+			// pagination.style.positionTop = '532px'
+			pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			pagination.style.bottom = '0px'
+		}
+		console.log(pagination.getBoundingClientRect())
+
+	}
+
+	document.getElementById('next').addEventListener("click", function(){
+		if(numPage == 1){
+			numPage = 2
+			page1Mat.style.display = 'none'
+			page2Mat.style.display = 'block'
+			dot1.classList.remove('pagination__dot--active')
+			dot2.classList.add('pagination__dot--active')
+		}else if(numPage == 2){
+			numPage = 3
+			page2Mat.style.display = 'none'
+			page3Mat.style.display = 'block'
+			dot2.classList.remove('pagination__dot--active')
+			dot3.classList.add('pagination__dot--active')
+		}
+
+		var coordenatePagination = pagination.getBoundingClientRect()
+		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+			pagination.style.position  = 'absolute'
+			pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			pagination.style.bottom = '0px'
+		}
+
+	})
+
+	document.getElementById('previous').addEventListener("click", function(){
+		if(numPage == 2){
+			numPage = 1
+			page2Mat.style.display = 'none'
+			page1Mat.style.display = 'block'
+			dot2.classList.remove('pagination__dot--active')
+			dot1.classList.add('pagination__dot--active')
+		}else if(numPage == 3){
+			numPage = 2
+			page3Mat.style.display = 'none'
+			page2Mat.style.display = 'block'
+			dot3.classList.remove('pagination__dot--active')
+			dot2.classList.add('pagination__dot--active')
+		}
+
+		var coordenatePagination = pagination.getBoundingClientRect()
+		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+			pagination.style.position  = 'absolute'
+			pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			pagination.style.bottom = '0px'
+		}
+	})
+
+	</script>
+</body>
+</html>
