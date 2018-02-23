@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		@font-face {
+			font-family: 'DinRegular';
+			src: url('../../Tipografia/DINNextRoundedLTPro-Regular.otf') format('opentype');
+		}
+
+		body {
+			font-family: 'DinREgular'
+		}
+
+		.main {
+			background-color: #ffffff;
+		}
+
+		.header {
+			background-color: #f4f4f4;
+			overflow: hidden;
+			padding-left: 3%;
+			height: 7vh
+		}
+
+		.imagen {
+			vertical-align: middle;
+			display: inline-block;
+			height: 100%
+		}
+
+		.video {
+			width: 100%
+		}
+
+		.back {
+			height: 100%;
+			float: right;
+			width: 15%;
+			color: white;
+			font-size: 30px;
+			background-color: #cccccc;
+			box-shadow: none;
+			border: none;
+			outline: none
+		}
+
+		.caption {
+			vertical-align: middle;
+			text-align: left;
+			display: inline-block;
+			width: 50%
+		}
+
+		.boton {
+			border: none;
+			color: white;
+			padding: 12px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			width: 40%;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 8px;
+			outline: none;
+			box-shadow: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="main">
+		<div class="header">
+			<img class="imagen" src="assets/img/01_bullying_check.png">
+			<div class="caption">
+				<span>BULLYNG</span>
+			</div>
+			<button class="back" onclick="back()">&#60;</button>
+		</div>
+
+		<div id='home'>
+			<div>¿Qué es el Bullying?</div>
+			<p>El bullying o acoso escolar, es un comportamiento agresivo e intencional que se produce entre compañeros en él ámbito escolar.</p>
+			<iframe class="video" src="https://www.youtube.com/embed/Iq0fG2EMuNU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+		</div>
+
+	</div>
+	<script>
+
+	</script>
+</body>
+
+</html>

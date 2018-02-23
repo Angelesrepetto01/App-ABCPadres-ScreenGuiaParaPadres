@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,96 +9,112 @@
 	<style>
 		@font-face {
 			font-family: 'DinRegular';
-			src: url('assets/Tipografia/DINNextRoundedLTPro-Regular.otf') format('opentype');
+			src: url('../Tipografia/DINNextRoundedLTPro-Regular.otf') format('opentype');
 		}
+
 		body {
 			font-family: 'DinREgular'
 		}
+
 		.main {
 			background-color: #ffffff;
 		}
-		.primaria{
-      		background-color: #f4f4f4;
-      		overflow: hidden;
-      		padding-left: 3%;
-      		height: 7vh
-    	}
-    	.imagen{
-      		vertical-align: middle;
-      		display: inline-block;
-      		height: 100%
-    	}
-    	.back{
-      		height: 100%;
-      		float: right;
-      		width: 15%;
-      		color: white;
-      		font-size: 30px;
-      		background-color: #cccccc;
-      		box-shadow: none;
-      		border: none;
-      		outline: none
-    	}
-    	.materia{
+
+		.primaria {
+			background-color: #f4f4f4;
+			overflow: hidden;
+			padding-left: 3%;
+			height: 7vh
+		}
+
+		.imagen {
+			vertical-align: middle;
+			display: inline-block;
+			height: 100%
+		}
+
+		.back {
+			height: 100%;
+			float: right;
+			width: 15%;
+			color: white;
+			font-size: 30px;
+			background-color: #cccccc;
+			box-shadow: none;
+			border: none;
+			outline: none
+		}
+
+		.materia {
 			padding-top: 10%;
 			padding-bottom: 10%;
 			text-align: center
 		}
-		.caption{
+
+		.caption {
 			vertical-align: middle;
 			text-align: left;
 			display: inline-block;
 			width: 50%
 		}
-		.boton{
-    		border: none;
-    		color: white;
-    		padding: 12px;
-    		text-align: center;
-    		text-decoration: none;
-    		display: inline-block;
+
+		.boton {
+			border: none;
+			color: white;
+			padding: 12px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
 			width: 40%;
-    		margin: 4px 2px;
-    		cursor: pointer;
-    		border-radius: 8px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 8px;
 			outline: none;
-			box-shadow:none;
+			box-shadow: none;
 		}
-		.lenguaje{
+
+		.lenguaje {
 			color: white;
 			background-color: #adc700
 		}
-		.matematica{
+
+		.matematica {
 			color: white;
 			background-color: #674b98
 		}
-		.mate{
+
+		.mate {
 			padding-top: 10%;
 			padding-bottom: 10%;
 			padding-left: 5%;
 			border-bottom: 2px solid #dbdbdb
 		}
-		.mat{
+
+		.mat {
 			color: #674b98;
 			font-weight: bold;
 		}
-		.leng{
+
+		.leng {
 			color: #adc700;
-			font-weight: bold;	
+			font-weight: bold;
 		}
-		.imagen2{
+
+		.imagen2 {
 			vertical-align: middle;
 			display: inline-block;
-			height: 8vh	
+			height: 8vh
 		}
-		.sumaresta{
+
+		.sumaresta {
 			background-color: #f7f7f7;
 			height: 12vh;
 			padding-left: 8%;
 			padding-top: 5%;
 			border-bottom: 2px solid #dbdbdb
-		}	
-		.forward{
+		}
+
+		.forward {
 			float: right;
 			padding-right: 8vw;
 			padding-top: 2vh;
@@ -105,44 +122,51 @@
 			color: grey;
 			border: none;
 			box-shadow: none;
-			font-size: 30px; 
+			font-size: 30px;
 		}
+
 		.container {
 			text-align: center;
 		}
-		.parrafo{
+
+		.parrafo {
 			margin-left: 15%;
 			margin-top: 10%
 		}
+
 		ul {
-  			padding-left: 10%;
-  			margin-right: 10%;
+			padding-left: 10%;
+			margin-right: 10%;
 		}
-		li{
+
+		li {
 			color: #adc700;
 			font-size: 40px;
 			margin-bottom: 3%
 		}
-		.lista{
+
+		.lista {
 			color: #545454;
 			font-size: 18px;
 			font-weight: bold;
 			text-align: justify;
 			text-justify: inter-word;
 		}
+
 		.button {
-    		background-color: #adc700;
-    		border: none;
-    		color: white;
-    		padding: 20px;
-    		text-align: center;
-    		text-decoration: none;
-    		display: inline-block;
-    		font-size: 16px;
-    		margin: 4px 2px;
+			background-color: #adc700;
+			border: none;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
 			cursor: pointer;
 			border-radius: 8px;
 		}
+
 		.text {
 			color: #674b89;
 		}
@@ -154,6 +178,7 @@
 		.imgTutorial {
 			width: 100%
 		}
+
 		.pagination {
 			position: relative;
 			bottom: 5px;
@@ -162,6 +187,7 @@
 			margin: auto;
 			text-align: center;
 		}
+
 		.pagination__dot {
 			position: relative;
 			width: 8px;
@@ -174,6 +200,7 @@
 			-webkit-transition: .3s;
 			transition: .3s;
 		}
+
 		.pagination__next_privous {
 			position: relative;
 			display: inline-block;
@@ -184,14 +211,17 @@
 			-webkit-transition: .3s;
 			transition: .3s;
 		}
+
 		.pagination__dot--active {
 			background: gray;
 		}
-		.corazon{
+
+		.corazon {
 			width: 50px;
 			float: right;
 			margin-right: 6%
 		}
+
 		/* .paginationBottm {
 			position: absolute;
 			left: 0;
@@ -199,35 +229,38 @@
 			margin: auto;
 			text-align: center;
 		} */
-
 	</style>
 </head>
+
 <body>
 	<div class="main">
-			<div class="primaria">
-					<img class="imagen" src="assets/MenuPrincipal/01_icono_menu_p.png">
-					<div class="caption"><span>PRIMARIA: 1er año</span></div>
-					<button class="back" onclick="back()"><</button>
+		<div class="primaria">
+			<img class="imagen" src="assets/MenuPrincipal/01_icono_menu_p.png">
+			<div class="caption">
+				<span>PRIMARIA: 1er año</span>
 			</div>
+			<button class="back" onclick="back()">
+				<</button>
+		</div>
 
-			<div id='home'>
-  				<div class="materia">
-					<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
-					<span class="caption">PRÁCTICAS DEL LENGUAJE</span>
-					<div style="padding-top: 5%">
-						<button class="boton lenguaje" onclick="enterLeng()">Tutoriales</button>
-						<button class="boton lenguaje">Aprender jugando</button>
-					</div>
-				</div>
-				<div class="materia" style="background-color: #f7f7f7">
-					<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
-					<span class="caption">MATEMÁTICA</span>
-					<div style="padding-top: 5%">
-						<button class="boton matematica" onclick="enterMath()">Tutoriales</button>
-						<button class="boton matematica">Aprender jugando</button>
-					</div>
+		<div id='home'>
+			<div class="materia">
+				<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+				<span class="caption">PRÁCTICAS DEL LENGUAJE</span>
+				<div style="padding-top: 5%">
+					<button class="boton lenguaje" onclick="enterLeng()">Tutoriales</button>
+					<button class="boton lenguaje">Aprender jugando</button>
 				</div>
 			</div>
+			<div class="materia" style="background-color: #f7f7f7">
+				<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+				<span class="caption">MATEMÁTICA</span>
+				<div style="padding-top: 5%">
+					<button class="boton matematica" onclick="enterMath()">Tutoriales</button>
+					<button class="boton matematica">Aprender jugando</button>
+				</div>
+			</div>
+		</div>
 
 		<div id="elegirMat">
 			<div class="mate">
@@ -236,7 +269,8 @@
 			</div>
 			<div class="sumaresta">
 				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
-				<span class="caption">SUMA Y RESTA</span><button onclick="sumas()" class="forward">></button>
+				<span class="caption">SUMA Y RESTA</span>
+				<button onclick="sumas()" class="forward">></button>
 			</div>
 		</div>
 
@@ -247,7 +281,8 @@
 			</div>
 			<div class="sumaresta">
 				<img style="height: 50px" class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1.png">
-				<span class="caption">Ortografía y puntuación</span><button onclick="ortografia()" class="forward">></button>
+				<span class="caption">Ortografía y puntuación</span>
+				<button onclick="ortografia()" class="forward">></button>
 			</div>
 		</div>
 
@@ -258,14 +293,16 @@
 			</div>
 			<div class="sumaresta">
 				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
-				<span class="caption">TUTORIAL 1</span><button class="forward" onclick="goto_tutorial1_math()" >></button>
+				<span class="caption">TUTORIAL 1</span>
+				<button class="forward" onclick="goto_tutorial1_math()">></button>
 			</div>
 			<div class="sumaresta">
 				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
-				<span class="caption">TUTORIAL 2</span><button class="forward">></button>
+				<span class="caption">TUTORIAL 2</span>
+				<button class="forward">></button>
 			</div>
 		</div>
-		
+
 		<div id="pickTutorialLeng">
 			<div class="mate">
 				<img class="imagen" src="assets/PracticasLenguaje/01_icono_menu_practicas.png">
@@ -273,15 +310,18 @@
 			</div>
 			<div class="sumaresta">
 				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1.png">
-				<span class="caption">ORTOGRAFÍA: USO DE LA “MB” / “MP” / “NV”</span><button onclick="goto_tutorial1_leng()" class="forward">></button>
+				<span class="caption">ORTOGRAFÍA: USO DE LA “MB” / “MP” / “NV”</span>
+				<button onclick="goto_tutorial1_leng()" class="forward">></button>
 			</div>
 			<div style="background-color: white" class="sumaresta">
 				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1b.png">
-				<span class="caption">PUNTUACIÓN</span><button style="background-color: white" class="forward">></button>
+				<span class="caption">PUNTUACIÓN</span>
+				<button style="background-color: white" class="forward">></button>
 			</div>
 			<div style="background-color: white" class="sumaresta">
 				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1c.png">
-				<span class="caption">CONSEJOS Y EJERCICIOS</span><button style="background-color: white" class="forward">></button>
+				<span class="caption">CONSEJOS Y EJERCICIOS</span>
+				<button style="background-color: white" class="forward">></button>
 			</div>
 		</div>
 
@@ -290,25 +330,40 @@
 				<div class="container">
 					<img src="assets/Matematica/01_icono_mat_tutorial1.png">
 					<p>
-					<span class="text">	Jazmín tiene</span> <span class="number">$25</span> <span class="text">y compra una gaseosa de </span><span class="number">$12.</span> 					
+						<span c
+						lass="text"> Jazmín tiene</span>
+						<span class="number">$25</span>
+						<span class="text">y compra una gaseosa de </span>
+						<span class="number">$12.</span>
 					</p>
 					<p>
 						¿Cuánto dinero le queda?
 					</p>
-		
-					<button class="button" id="init" onclick="initTutorial1_Math()"><span>!APRENDE A RESOLVERLO!</span></button>
+
+					<button class="button" id="init" onclick="initTutorial1_Math()">
+						<span>!APRENDE A RESOLVERLO!</span>
+					</button>
 				</div>
-			
+
 			</div>
 
 			<div id="math_tutorial_page1" style="display: none">
 				<h3>Primera resolución posible</h3>
 
-				<p> Descomponer al <strong> 25</strong> en billetes de <strong>$10</strong> y monedas de <strong>$1.</strong> Serían dos billetes de <strong>$10</strong> y <strong>5</strong> monedas de <strong>$1.</strong></p>
+				<p> Descomponer al
+					<strong> 25</strong> en billetes de
+					<strong>$10</strong> y monedas de
+					<strong>$1.</strong> Serían dos billetes de
+					<strong>$10</strong> y
+					<strong>5</strong> monedas de
+					<strong>$1.</strong>
+				</p>
 
 				<img src="assets/Matematica/01_icono_mat_tutorial1c.png" class="imgTutorial">
-				
-				<p>Luego tachan o retiran la cantidad de billetes que representan <strong>$12:</strong> </p>
+
+				<p>Luego tachan o retiran la cantidad de billetes que representan
+					<strong>$12:</strong>
+				</p>
 
 				<img src="assets/Matematica/01_icono_mat_tutorial1d.png" class="imgTutorial">
 
@@ -316,288 +371,299 @@
 
 				<img src="assets/Matematica/01_icono_mat_tutorial1e.png" class="imgTutorial">
 
-		</div>
+			</div>
 
-		<div id="math_tutorial_page2" style="display: none">
+			<div id="math_tutorial_page2" style="display: none">
 				<h3>Segunda resolución posible</h3>
 
-				<p> Descomponer los números <strong> 25</strong> y <strong>12</strong> en <strong>“dieces” </strong>y <strong>“unos”.</strong> </p>
+				<p> Descomponer los números
+					<strong> 25</strong> y
+					<strong>12</strong> en
+					<strong>“dieces” </strong>y
+					<strong>“unos”.</strong>
+				</p>
 
 				<img src="assets/Matematica/01_icono_mat_tutorial1f.png" class="imgTutorial">
-				
+
 				<p>Una vez descompuestos los números, los restan agrupando y luego suman el resultado</p>
 
 				<img src="assets/Matematica/01_icono_mat_tutorial1ff.png" class="imgTutorial">
 
-		</div>
+			</div>
 
-		
-		<div id="math_tutorial_page3" style="display: none">
+
+			<div id="math_tutorial_page3" style="display: none">
 				<h3>Tercera resolución posible</h3>
 
-				<p> Componer la diferencia desde el <strong> 12</strong> hasta el <strong>25</strong>, por conteo de a <strong>1.</strong> Es decir, contar <strong>cuántos números faltan para llegar al 25</strong> y sumarlos. </p>
+				<p> Componer la diferencia desde el
+					<strong> 12</strong> hasta el
+					<strong>25</strong>, por conteo de a
+					<strong>1.</strong> Es decir, contar
+					<strong>cuántos números faltan para llegar al 25</strong> y sumarlos. </p>
 
 				<img src="assets/Matematica/01_icono_mat_tutorial1g.png" class="imgTutorial">
+			</div>
+
 		</div>
 
-	</div>
-
-	<div id="container_leng_tutorial1" style="display: none">
-		<div id="leng_tutorial1_page1">
-			<div class="parrafo">
-				<div>
-				<p style="font-size: 17.5px; display: inline-block;">
-				<strong>¿QUÉ ES LA ORTOGRAFÍA?</strong> 					
-				</p>
-				<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+		<div id="container_leng_tutorial1" style="display: none">
+			<div id="leng_tutorial1_page1">
+				<div class="parrafo">
+					<div>
+						<p style="font-size: 17.5px; display: inline-block;">
+							<strong>¿QUÉ ES LA ORTOGRAFÍA?</strong>
+						</p>
+						<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+					</div>
+					<ul>
+						<li>
+							<p class="lista">
+								Es la forma correcta de escribir palabras respetando reglas.
+							</p>
+						</li>
+						<li>
+							<p class="lista">
+								Estas reglas nos permiten identificar, por ejemplo, cuándo se usa la “c”, la “s” o la “z”; cuándo la “y” o la “ll” o cuando
+								se usa la “v” o la “b” y ayudarnos cuando tenemos dudas sobre cuál de estas letras deberíamos usar.
+							</p>
+						</li>
+						<li>
+							<p class="lista">
+								En este primer nivel, vamos a hacer hincapié en el uso de la MP, MB y NV.
+							</p>
+						</li>
 				</div>
-				<ul>
-					<li>
-					<p class="lista">
-						Es la forma correcta de escribir palabras respetando reglas.
-					</p>
-					</li>
-					<li>			
-					<p class="lista">
-						Estas reglas nos permiten identificar, por ejemplo, cuándo se usa la “c”, la “s” o la “z”; cuándo la “y” o la “ll” o cuando se usa la “v” o la “b” y ayudarnos cuando tenemos dudas sobre cuál de estas letras deberíamos usar.
-					</p>
-					</li>
-					<li>	
-					<p class="lista">
-						En este primer nivel, vamos a hacer hincapié en el uso de la MP, MB y NV.
-					</p>
-					</li>
-				</div>					
 			</div>
 
 			<div id="leng_tutorial1_page2" style="display: none">
 				<p>Para ello, es importante recordar que la forma correcta de escribir palabras que tienen estas letras combinadas es: </p>
 
 				<img src="assets/PracticasLenguaje/01_icono_practicas_tutorial1d.png" class="imgTutorial">
-				
-				<p>Esta regla ortográfica nos puede resultar de ayuda cuando tenemos dudas sobre la escritura de una palabra. Por ejemplo, 
-					¿se escribe “compartir” o “conpartir”? 
+
+				<p>Esta regla ortográfica nos puede resultar de ayuda cuando tenemos dudas sobre la escritura de una palabra. Por ejemplo,
+					¿se escribe “compartir” o “conpartir”?
 				</p>
 			</div>
 		</div>
-		
+
 	</div>
 
 
-		<div class="pagination" id='pagination'>
-			<div class="pagination__next_privous" id="previous">&laquo;</div>
-			<div id="pagitation_dots" style="display: inline-block;">
-			</div>
-			<div class="pagination__next_privous" id="next">&raquo;</div>			
+	<div class="pagination" id='pagination'>
+		<div class="pagination__next_privous" id="previous">&laquo;</div>
+		<div id="pagitation_dots" style="display: inline-block;">
 		</div>
-	
+		<div class="pagination__next_privous" id="next">&raquo;</div>
 	</div>
-	
+
+	</div>
+
 	<script>
-	let home = document.getElementById('home');
-	let elegirLeng = document.getElementById('elegirLeng')
-	let elegirMat = document.getElementById('elegirMat');
-	let pickTutorialLeng = document.getElementById('pickTutorialLeng');
-	let pickTutorialMat = document.getElementById('pickTutorialMat');
-	let container_leng_tutorial1 = document.getElementById('container_leng_tutorial1');
-	let math_tutorial1_coverPage = document.getElementById('math_tutorial1_coverPage');
-	let container_math_tutorial1 = document.getElementById('container_math_tutorial1');
-	let pagination = document.getElementById('pagination');
-	let navigation = [];
-	let actualScreen = null;
-	let showPagination = false;
-	let tutorial_active = null;
+		let home = document.getElementById('home');
+		let elegirLeng = document.getElementById('elegirLeng')
+		let elegirMat = document.getElementById('elegirMat');
+		let pickTutorialLeng = document.getElementById('pickTutorialLeng');
+		let pickTutorialMat = document.getElementById('pickTutorialMat');
+		let container_leng_tutorial1 = document.getElementById('container_leng_tutorial1');
+		let math_tutorial1_coverPage = document.getElementById('math_tutorial1_coverPage');
+		let container_math_tutorial1 = document.getElementById('container_math_tutorial1');
+		let pagination = document.getElementById('pagination');
+		let navigation = [];
+		let actualScreen = null;
+		let showPagination = false;
+		let tutorial_active = null;
 
-	elegirLeng.style.display = 'none'
-	elegirMat.style.display = 'none'
-	pickTutorialLeng.style.display = 'none'
-	pickTutorialMat.style.display = 'none'
-	pagination.style.display = 'none'
-
-	let numPage = 0;
-	let numPagetutorial1_math = 0;
-	let numPagetutorial1_leng = 0;
-	let numberOfPages = 0
-	let buttonInit = document.getElementById('init')
-
-	function enterLeng() {
-		home.style.display = 'none'
-		elegirLeng.style.display = 'block'
-		navigation.push(home)
-		actualScreen = elegirLeng
-	}
-
-	function enterMath() {
-		home.style.display = 'none'
-		elegirMat.style.display = 'block'
-		navigation.push(home)
-		actualScreen = elegirMat
-	}
-
-	function ortografia() {
 		elegirLeng.style.display = 'none'
-		pickTutorialLeng.style.display = 'block'
-		navigation.push(elegirLeng)
-		actualScreen = pickTutorialLeng
-	} 
-
-	function sumas(){
 		elegirMat.style.display = 'none'
-		pickTutorialMat.style.display = 'block'
-		navigation.push(elegirMat)
-		actualScreen = pickTutorialMat
-	}
-
-	let firstIntoTutorial1Math = true;
-	function goto_tutorial1_math(){
-		numPage = numPagetutorial1_math
-		// console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
-		tutorial_active = 'tutorial1_math'
-		pickTutorialMat.style.display = 'none'
-		container_math_tutorial1.style.display = 'block'
-		navigation.push(pickTutorialMat)
-		actualScreen = container_math_tutorial1
-		// coverPageMat.style.display = 'block'
-		numberOfPages = 3
-		createDots(numberOfPages)
-
-		if(numPage > 0){
-			pagination.style.display = 'block';
-		}
-	}
-
-	let firstIntoTutorial1Leng = true;
-	function goto_tutorial1_leng(){
-		numPage = numPagetutorial1_leng
-		// console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
-		tutorial_active = 'tutorial1_leng'
 		pickTutorialLeng.style.display = 'none'
-		container_leng_tutorial1.style.display = 'block'
-		navigation.push(pickTutorialLeng)	
-		actualScreen = container_leng_tutorial1
+		pickTutorialMat.style.display = 'none'
+		pagination.style.display = 'none'
 
-		numberOfPages = 2
-		createDots(numberOfPages)
+		let numPage = 0;
+		let numPagetutorial1_math = 0;
+		let numPagetutorial1_leng = 0;
+		let numberOfPages = 0
+		let buttonInit = document.getElementById('init')
 
-		if(firstIntoTutorial1Leng){
+		function enterLeng() {
+			home.style.display = 'none'
+			elegirLeng.style.display = 'block'
+			navigation.push(home)
+			actualScreen = elegirLeng
+		}
+
+		function enterMath() {
+			home.style.display = 'none'
+			elegirMat.style.display = 'block'
+			navigation.push(home)
+			actualScreen = elegirMat
+		}
+
+		function ortografia() {
+			elegirLeng.style.display = 'none'
+			pickTutorialLeng.style.display = 'block'
+			navigation.push(elegirLeng)
+			actualScreen = pickTutorialLeng
+		}
+
+		function sumas() {
+			elegirMat.style.display = 'none'
+			pickTutorialMat.style.display = 'block'
+			navigation.push(elegirMat)
+			actualScreen = pickTutorialMat
+		}
+
+		let firstIntoTutorial1Math = true;
+		function goto_tutorial1_math() {
+			numPage = numPagetutorial1_math
+			// console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
+			tutorial_active = 'tutorial1_math'
+			pickTutorialMat.style.display = 'none'
+			container_math_tutorial1.style.display = 'block'
+			navigation.push(pickTutorialMat)
+			actualScreen = container_math_tutorial1
+			// coverPageMat.style.display = 'block'
+			numberOfPages = 3
+			createDots(numberOfPages)
+
+			if (numPage > 0) {
+				pagination.style.display = 'block';
+			}
+		}
+
+		let firstIntoTutorial1Leng = true;
+		function goto_tutorial1_leng() {
+			numPage = numPagetutorial1_leng
+			// console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
+			tutorial_active = 'tutorial1_leng'
+			pickTutorialLeng.style.display = 'none'
+			container_leng_tutorial1.style.display = 'block'
+			navigation.push(pickTutorialLeng)
+			actualScreen = container_leng_tutorial1
+
+			numberOfPages = 2
+			createDots(numberOfPages)
+
+			if (firstIntoTutorial1Leng) {
+				numPage = 1
+				numPagetutorial1_leng = 1
+				// document.getElementById('leng_tutorial1_page1').style.display = 'block'
+				firstIntoTutorial1Leng = false
+			}
+			pagination.style.display = 'block'
+			showPagination = true
+			var coordenatePagination = pagination.getBoundingClientRect()
+			if ((coordenatePagination.x + coordenatePagination.height) < screen.height) {
+				pagination.style.position = 'absolute'
+				// pagination.style.positionTop = '532px'
+				pagination.style.top = screen.height - coordenatePagination.height + 'px'
+				pagination.style.bottom = '0px'
+			}
+
+		}
+
+		function back() {
+			if (showPagination) {
+				pagination.style.display = 'none'
+			}
+
+			if (navigation.length > 0) {
+				actualScreen.style.display = 'none'
+				navigation[navigation.length - 1].style.display = 'block'
+				actualScreen = navigation.pop()
+			}
+		}
+
+		function createDots(numDots) {
+			let listDots = document.getElementById('pagitation_dots')
+			while (listDots.hasChildNodes()) {
+				listDots.removeChild(listDots.firstChild);
+			}
+			for (var i = 1; i <= numDots; i++) {
+				let element = '<div class="pagination__dot" id="dot' + i + '"></div>'
+				document.getElementById('pagitation_dots').insertAdjacentHTML('beforeend', element);
+			}
+			let dot_active = numPage ? numPage : 1
+			document.getElementById('dot' + dot_active).classList.add('pagination__dot--active')
+
+		}
+
+		function initTutorial1_Math() {
 			numPage = 1
-			numPagetutorial1_leng = 1
-			// document.getElementById('leng_tutorial1_page1').style.display = 'block'
-			firstIntoTutorial1Leng = false
-		}
-		pagination.style.display = 'block'
-		showPagination = true
-		var coordenatePagination = pagination.getBoundingClientRect()
-		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-			pagination.style.position  = 'absolute'
-			// pagination.style.positionTop = '532px'
-			pagination.style.top= screen.height - coordenatePagination.height + 'px'
-			pagination.style.bottom = '0px'
-		}
-
-	}
-
-	function back() {
-		if(showPagination){
-			pagination.style.display = 'none'	
-		}
-
-		if(navigation.length > 0) {
-			actualScreen.style.display = 'none' 
-			navigation[navigation.length -1].style.display = 'block'
-			actualScreen = navigation.pop()
-		}
-	}
-
-	function createDots(numDots) {
-		let listDots = document.getElementById('pagitation_dots')
-		while (listDots.hasChildNodes()) {   
-			listDots.removeChild(listDots.firstChild);
-		}
-		for (var i = 1; i <= numDots; i++) {
-			let element = '<div class="pagination__dot" id="dot' + i + '"></div>'
-			document.getElementById('pagitation_dots').insertAdjacentHTML('beforeend', element);
-		}
-		let dot_active = numPage?numPage:1
-		document.getElementById('dot'+ dot_active).classList.add('pagination__dot--active')
-
-	}
-
-	function initTutorial1_Math() {
-		numPage = 1
-		numPagetutorial1_math = 1
-		math_tutorial1_coverPage.style.display = 'none'
-		document.getElementById('math_tutorial_page1').style.display = 'block'
-		pagination.style.display = 'block'
-		showPagination = true
-		var coordenatePagination = pagination.getBoundingClientRect()
-		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-			pagination.style.position  = 'absolute'
-			// pagination.style.positionTop = '532px'
-			pagination.style.top= screen.height - coordenatePagination.height + 'px'
-			pagination.style.bottom = '0px'
-		}
-	}
-
-	document.getElementById('next').addEventListener("click", function(){
-		if(numPage < numberOfPages) {
-			let nextPage = numPage + 1
-			let actualPag = numPage
-			if(tutorial_active == 'tutorial1_leng'){
-				document.getElementById('leng_tutorial1_page'+ actualPag).style.display = 'none';
-				document.getElementById('leng_tutorial1_page'+ nextPage).style.display = 'block';
-				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
-				document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active')
-				++numPagetutorial1_leng
+			numPagetutorial1_math = 1
+			math_tutorial1_coverPage.style.display = 'none'
+			document.getElementById('math_tutorial_page1').style.display = 'block'
+			pagination.style.display = 'block'
+			showPagination = true
+			var coordenatePagination = pagination.getBoundingClientRect()
+			if ((coordenatePagination.x + coordenatePagination.height) < screen.height) {
+				pagination.style.position = 'absolute'
+				// pagination.style.positionTop = '532px'
+				pagination.style.top = screen.height - coordenatePagination.height + 'px'
+				pagination.style.bottom = '0px'
 			}
-			if(tutorial_active == 'tutorial1_math') {
-				document.getElementById('math_tutorial_page'+ actualPag).style.display = 'none';
-				document.getElementById('math_tutorial_page'+ nextPage).style.display = 'block';
-				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
-				document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active');
-				++numPagetutorial1_math	
+		}
+
+		document.getElementById('next').addEventListener("click", function () {
+			if (numPage < numberOfPages) {
+				let nextPage = numPage + 1
+				let actualPag = numPage
+				if (tutorial_active == 'tutorial1_leng') {
+					document.getElementById('leng_tutorial1_page' + actualPag).style.display = 'none';
+					document.getElementById('leng_tutorial1_page' + nextPage).style.display = 'block';
+					document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+					document.getElementById('dot' + nextPage).classList.add('pagination__dot--active')
+					++numPagetutorial1_leng
+				}
+				if (tutorial_active == 'tutorial1_math') {
+					document.getElementById('math_tutorial_page' + actualPag).style.display = 'none';
+					document.getElementById('math_tutorial_page' + nextPage).style.display = 'block';
+					document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+					document.getElementById('dot' + nextPage).classList.add('pagination__dot--active');
+					++numPagetutorial1_math
+				}
+				numPage = nextPage
 			}
-			numPage = nextPage
-		}
 
-		var coordenatePagination = pagination.getBoundingClientRect()
-		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-			pagination.style.position  = 'absolute'
-			pagination.style.top= screen.height - coordenatePagination.height + 'px'
-			pagination.style.bottom = '0px'
-		}
-
-	})
-
-	document.getElementById('previous').addEventListener("click", function(){
-		if(numPage > 1) {
-			let previousPage = numPage - 1
-			let actualPag = numPage
-			if(tutorial_active == 'tutorial1_leng'){
-				document.getElementById('leng_tutorial1_page'+ actualPag).style.display = 'none';
-				document.getElementById('leng_tutorial1_page'+ previousPage).style.display = 'block';
-				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
-				document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
-				--numPagetutorial1_leng
+			var coordenatePagination = pagination.getBoundingClientRect()
+			if ((coordenatePagination.x + coordenatePagination.height) < screen.height) {
+				pagination.style.position = 'absolute'
+				pagination.style.top = screen.height - coordenatePagination.height + 'px'
+				pagination.style.bottom = '0px'
 			}
-			if(tutorial_active == 'tutorial1_math') {
-				document.getElementById('math_tutorial_page'+ actualPag).style.display = 'none';
-				document.getElementById('math_tutorial_page'+ previousPage).style.display = 'block';
-				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
-				document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
-				--numPagetutorial1_math
-			}
-			numPage = previousPage
-		}
 
-		var coordenatePagination = pagination.getBoundingClientRect()
-		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-			pagination.style.position  = 'absolute'
-			pagination.style.top= screen.height - coordenatePagination.height + 'px'
-			pagination.style.bottom = '0px'
-		}
-	})
+		})
+
+		document.getElementById('previous').addEventListener("click", function () {
+			if (numPage > 1) {
+				let previousPage = numPage - 1
+				let actualPag = numPage
+				if (tutorial_active == 'tutorial1_leng') {
+					document.getElementById('leng_tutorial1_page' + actualPag).style.display = 'none';
+					document.getElementById('leng_tutorial1_page' + previousPage).style.display = 'block';
+					document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+					document.getElementById('dot' + previousPage).classList.add('pagination__dot--active')
+					--numPagetutorial1_leng
+				}
+				if (tutorial_active == 'tutorial1_math') {
+					document.getElementById('math_tutorial_page' + actualPag).style.display = 'none';
+					document.getElementById('math_tutorial_page' + previousPage).style.display = 'block';
+					document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+					document.getElementById('dot' + previousPage).classList.add('pagination__dot--active')
+					--numPagetutorial1_math
+				}
+				numPage = previousPage
+			}
+
+			var coordenatePagination = pagination.getBoundingClientRect()
+			if ((coordenatePagination.x + coordenatePagination.height) < screen.height) {
+				pagination.style.position = 'absolute'
+				pagination.style.top = screen.height - coordenatePagination.height + 'px'
+				pagination.style.bottom = '0px'
+			}
+		})
 
 	</script>
 </body>
+
 </html>
