@@ -146,11 +146,9 @@
 		.text {
 			color: #674b89;
 		}
-
 		.number {
 			color: #adc700;
 		}
-
 		.imgTutorial {
 			width: 100%
 		}
@@ -235,7 +233,24 @@
 			font-size: 17px;
 			font-weight: bold;
 		}
-
+		#alertFamiliaPalabras{
+			position: absolute;
+			margin: auto;
+			background-color: #adc700;
+			width: 70%;
+  			height: 50%;
+  			position: absolute;
+  			top: 40%;
+  			left: 10%;
+  			padding-left: 5%;
+  			padding-right: 5%;
+  			border-radius: 15px
+		}
+		.textAlert{
+			font-size: 18px;
+			color: white;
+			font-weight: bold
+		}
 	</style>
 </head>
 <body>
@@ -548,11 +563,12 @@
 					<span style="margin-right: 13vw; margin-top: 9%; float: right;"><strong>Para tener en cuenta</strong></span>
 				</div>
 				<p style="margin: 0">Resulta importante trabajar la ortografía y la puntuación desde y/o a partir de un texto para reflexionar sobre los usos del lenguaje en el contexto del escrito.</p>
-			</div>					
+			</div>
+
 		</div>
 
 		<div id="leng_tutorial3_page2" style="display: none">
-			<div style="margin-left: 5%">
+			<div class="blurry" style="margin-left: 5%">
 				<div style="height: 7vh">
 					<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
 				</div>
@@ -564,7 +580,7 @@
 					</div>
 					<div style="display: table; margin-bottom: 5%">
 						<img class="iconolengua" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3d.png"><p class="lista" style="display: table-cell; color: black; vertical-align: middle;">
-							Con esas palabras que encontraron, y con el mismo uso ortográfico, <strong>buscar o <button onclick="document.getElementById('id01').style.display='block'" class="popup">pensar familia de palabras.</button></strong> 
+							Con esas palabras que encontraron, y con el mismo uso ortográfico, <strong>buscar o <button onclick="activateFamiliaPalabras()" class="popup">pensar familia de palabras.</button></strong> 
 						</p>
 					</div>
 					<div style="display: table; margin-bottom: 5%">
@@ -574,19 +590,22 @@
 					</div>
 				</div>
 			</div>
-			<div class="libro">
+			<div class="libro blurry">
 				<img style="height: 150px; display: table-cell; vertical-align: middle;" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3h.png">
 				<div style="display: table-cell; vertical-align: middle;">
 					<p class="lista" style="color: white; padding-left: 3%; padding-right: 3%">Pueden utilizar el siguiente cuento para que los chicos practiquen en casa</p>
 					<p class="lista" style="color: white; font-weight: bold; padding-left: 3%; padding-right: 3%">El lobo Rodolfo</p>
 				</div>
 			</div>
+			<div id='alertFamiliaPalabras'>
+			<button style="float: right; margin-top: 5%; color: white; font-weight: bold; border: none; background-color: #adc700; box-shadow: none; outline: none" onclick="reverseAlertFamilia()">X</button>
+  			<p class="textAlert">Es un conjunto de palabras que comparten la misma raíz.</p>
+  			<p class='textAlert'>Ej:</p>
+  			<p class='textAlert'>campo - campesino -  campero.</p>
+  			<p class='textAlert'>envase - envasado - envasadora.</p>
+  			<p class='textAlert'>sombra - sombrilla - sombreado.</p>
 		</div>
-
-		</div>	
-		
-	
-
+		</div>
 
 		<div class="pagination" id='pagination'>
 			<div class="pagination__next_privous" id="previous">&laquo;</div>
@@ -598,7 +617,6 @@
 	</div>
 	
 	<script>
-
 	let home = document.getElementById('home');
 	let elegirLeng = document.getElementById('elegirLeng')
 	let elegirMat = document.getElementById('elegirMat');
@@ -607,6 +625,7 @@
 	let container_leng_tutorial1 = document.getElementById('container_leng_tutorial1');
 	let container_leng_tutorial2 = document.getElementById('container_leng_tutorial2');
 	let container_leng_tutorial3 = document.getElementById('container_leng_tutorial3');
+	let alertFamiliaPalabras = document.getElementById('alertFamiliaPalabras');
 	let math_tutorial1_coverPage = document.getElementById('math_tutorial1_coverPage');
 	let container_math_tutorial1 = document.getElementById('container_math_tutorial1');
 	let pagination = document.getElementById('pagination');
@@ -618,9 +637,10 @@
 	elegirLeng.style.display = 'none'
 	elegirMat.style.display = 'none'
 	pickTutorialLeng.style.display = 'none'
+	alertFamiliaPalabras.style.display = 'none'
 	pickTutorialMat.style.display = 'none'
 	pagination.style.display = 'none'
-
+	
 	let numPage = 0;
 	let numPagetutorial1_math = 0;
 	let numPagetutorial1_leng = 0;
@@ -628,35 +648,30 @@
 	let numPagetutorial3_leng = 0;
 	let numberOfPages = 0
 	let buttonInit = document.getElementById('init')
-
 	function enterLeng() {
 		home.style.display = 'none'
 		elegirLeng.style.display = 'block'
 		navigation.push(home)
 		actualScreen = elegirLeng
 	}
-
 	function enterMath() {
 		home.style.display = 'none'
 		elegirMat.style.display = 'block'
 		navigation.push(home)
 		actualScreen = elegirMat
 	}
-
 	function ortografia() {
 		elegirLeng.style.display = 'none'
 		pickTutorialLeng.style.display = 'block'
 		navigation.push(elegirLeng)
 		actualScreen = pickTutorialLeng
 	} 
-
 	function sumas(){
 		elegirMat.style.display = 'none'
 		pickTutorialMat.style.display = 'block'
 		navigation.push(elegirMat)
 		actualScreen = pickTutorialMat
 	}
-
 	let firstIntoTutorial1Math = true;
 	function goto_tutorial1_math(){
 		numPage = numPagetutorial1_math
@@ -669,12 +684,10 @@
 		// coverPageMat.style.display = 'block'
 		numberOfPages = 3
 		createDots(numberOfPages)
-
 		if(numPage > 0){
 			pagination.style.display = 'block';
 		}
 	}
-
 	let firstIntoTutorial1Leng = true;
 	function goto_tutorial1_leng(){
 		numPage = numPagetutorial1_leng
@@ -686,10 +699,8 @@
 			navigation.push(pickTutorialLeng)	
 		}
 		actualScreen = container_leng_tutorial1
-
 		numberOfPages = 2
 		createDots(numberOfPages)
-
 		if(firstIntoTutorial1Leng){
 			numPage = 1
 			numPagetutorial1_leng = 1
@@ -700,12 +711,12 @@
 		showPagination = true
 		var coordenatePagination = pagination.getBoundingClientRect()
 		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+			console.log(coordenatePagination.x)
 			pagination.style.position  = 'absolute'
 			// pagination.style.positionTop = '532px'
 			pagination.style.top= screen.height - coordenatePagination.height + 'px'
 			pagination.style.bottom = '0px'
 		}
-
 	}
 	let firstIntoTutorial2Leng = true;
 	function goto_tutorial2_leng(){
@@ -715,10 +726,8 @@
 		container_leng_tutorial2.style.display = 'block'
 		navigation.push(pickTutorialLeng)	
 		actualScreen = container_leng_tutorial2
-
 		numberOfPages = 2
 		createDots(numberOfPages)
-
 		if(firstIntoTutorial2Leng){
 			numPage = 1
 			numPagetutorial2_leng = 1
@@ -729,11 +738,17 @@
 		showPagination = true
 		var coordenatePagination = pagination.getBoundingClientRect()
 		let container = document.getElementById("container_leng_tutorial2")
-		if((coordenatePagination.x + coordenatePagination.height )< container.scrollHeight){
-			pagination.style.position  = 'absolute'
-			pagination.style.top= container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		 	pagination.style.position  = 'absolute'
+		 	if(screen.height<container.scrollHeight){
+		 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 +'px'
+		 	}
+		 	else{
+		 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			}
 			pagination.style.bottom = '0px'
-		}
+		 }
 	}
 	let firstIntoTutorial3Leng = true;
 	function goto_tutorial3_leng(){
@@ -743,10 +758,8 @@
 		container_leng_tutorial3.style.display = 'block'
 		navigation.push(pickTutorialLeng)	
 		actualScreen = container_leng_tutorial3
-
 		numberOfPages = 2
 		createDots(numberOfPages)
-
 		if(firstIntoTutorial3Leng){
 			numPage = 1
 			numPagetutorial3_leng = 1
@@ -757,48 +770,43 @@
 		showPagination = true
 		var coordenatePagination = pagination.getBoundingClientRect()
 		let container = document.getElementById("container_leng_tutorial3")
-		if((coordenatePagination.x + coordenatePagination.height )< container.scrollHeight){
-			pagination.style.position  = 'absolute'
-			//En estas funciones reemplazás container.scrollHeight por screen.height y vuelve a como estaba antes. No funciona del todo bien porque los tamaños de pagina cambian.
-			pagination.style.top= container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		 	pagination.style.position  = 'absolute'
+		 	if(screen.height<container.scrollHeight){
+		 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		 	}
+		 	else{
+		 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			}
 			pagination.style.bottom = '0px'
-		}
+		 }
 	}
 
-	// let firstIntoTutorial2Leng = true;
-	// function goto_tutorial2_leng(){
-	// 	numPage = numPagetutorial2_leng
-	// 	tutorial_active = 'tutorial2_leng'
-	// 	pickTutorialLeng.style.display = 'none'
-	// 	container_leng_tutorial2.style.display = 'block'
-	// 	if(navigation.indexOf(pickTutorialLeng) === -1){ 
-	// 		navigation.push(pickTutorialLeng)
-	// 	}
-	// 	actualScreen = container_leng_tutorial2
-	// 	// coverPageMat.style.display = 'block'
-	// 	numberOfPages = 2
-	// 	createDots(numberOfPages)
-	// 	console.log(numPage)
-	// 	if(firstIntoTutorial2Leng){
-	// 		numPage === 1
-	// 		firstIntoTutorial2Leng = false
-	// 	}
-	// 	pagination.style.display = 'block';
-		
-	// }
-
+	function activateFamiliaPalabras(){
+		var elements = document.querySelectorAll('.blurry');
+		for(var i=0; i<elements.length; i++){
+    		elements[i].style.opacity= "0.5"
+		}
+		alertFamiliaPalabras.style.display = 'block'
+	}
+	function reverseAlertFamilia(){
+		var elements = document.querySelectorAll('.blurry');
+		for(var i=0; i<elements.length; i++){
+    		elements[i].style.opacity= "1"
+		}
+		alertFamiliaPalabras.style.display = 'none'		
+	}
 	function back() {
 		if(showPagination){
 			pagination.style.display = 'none'	
 		}
-
 		if(navigation.length > 0) {
 			actualScreen.style.display = 'none' 
 			navigation[navigation.length -1].style.display = 'block'
 			actualScreen = navigation.pop()
 		}
 	}
-
 	function createDots(numDots) {
 		let listDots = document.getElementById('pagitation_dots')
 		while (listDots.hasChildNodes()) {   
@@ -810,9 +818,7 @@
 		}
 		let dot_active = numPage?numPage:1
 		document.getElementById('dot'+ dot_active).classList.add('pagination__dot--active')
-
 	}
-
 	function initTutorial1_Math() {
 		numPage = 1
 		numPagetutorial1_math = 1
@@ -821,14 +827,13 @@
 		pagination.style.display = 'block'
 		showPagination = true
 		var coordenatePagination = pagination.getBoundingClientRect()
-		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
 			pagination.style.position  = 'absolute'
 			// pagination.style.positionTop = '532px'
 			pagination.style.top= screen.height - coordenatePagination.height + 'px'
 			pagination.style.bottom = '0px'
 		}
 	}
-
 	document.getElementById('next').addEventListener("click", function(){
 		if(numPage < numberOfPages) {
 			let nextPage = numPage + 1
@@ -863,17 +868,20 @@
 			}
 			numPage = nextPage
 		}
-
-		// var coordenatePagination = pagination.getBoundingClientRect()
-		// if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-		// 	let container = document.getElementById("container_leng_tutorial2")
-		// 	pagination.style.position  = 'absolute'
-		// 	pagination.style.top= container.scrollHeight - coordenatePagination.height + 'px'
-		// 	pagination.style.bottom = '0px'
-		// }
-
+		var coordenatePagination = pagination.getBoundingClientRect()
+		let container = (tutorial_active=="tutorial1_math")?document.getElementById("container_math_tutorial1"): (tutorial_active=="tutorial1_leng")?document.getElementById("container_leng_tutorial1"): (tutorial_active=="tutorial2_leng")?document.getElementById("container_leng_tutorial2"): document.getElementById("container_leng_tutorial3")
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		 	pagination.style.position  = 'absolute'
+		 	if(screen.height < container.scrollHeight){
+		 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		 	}
+		 	else{
+		 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			}
+			pagination.style.bottom = '0px'
+		 }
 	})
-
 	document.getElementById('previous').addEventListener("click", function(){
 		if(numPage > 1) {
 			let previousPage = numPage - 1
@@ -908,15 +916,20 @@
 			}
 			numPage = previousPage
 		}
-
-		// var coordenatePagination = pagination.getBoundingClientRect()
-		// if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-		// 	pagination.style.position  = 'absolute'
-		// 	pagination.style.top= screen.height - coordenatePagination.height + 'px'
-		// 	pagination.style.bottom = '0px'
-		// }
+		var coordenatePagination = pagination.getBoundingClientRect()
+		let container = (tutorial_active=="tutorial1_math")?document.getElementById("container_math_tutorial1"): (tutorial_active=="tutorial1_leng")?document.getElementById("container_leng_tutorial1"): (tutorial_active=="tutorial2_leng")?document.getElementById("container_leng_tutorial2"): document.getElementById("container_leng_tutorial3")
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		 	pagination.style.position  = 'absolute'
+		 	if(screen.height<container.scrollHeight){
+		 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		 	}
+		 	else{
+		 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			}
+			pagination.style.bottom = '0px'
+		 }
 	})
-
 	</script>
 </body>
 </html>
