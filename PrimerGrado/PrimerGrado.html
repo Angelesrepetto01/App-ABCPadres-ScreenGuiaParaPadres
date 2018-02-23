@@ -120,15 +120,15 @@
 		}
 		li{
 			color: #adc700;
-			font-size: 40px;
+			font-size: 38px;
 			margin-bottom: 3%
 		}
 		.lista{
 			color: #545454;
 			font-size: 18px;
-			font-weight: bold;
-			text-align: justify;
+			font-weight: 200;
 			text-justify: inter-word;
+			margin-top: 0
 		}
 		.button {
     		background-color: #adc700;
@@ -190,15 +190,51 @@
 		.corazon{
 			width: 50px;
 			float: right;
-			margin-right: 6%
+			margin-right: 6%;
+			vertical-align: middle;
 		}
-		/* .paginationBottm {
-			position: absolute;
-			left: 0;
-			right: 0;
-			margin: auto;
-			text-align: center;
-		} */
+		.cuadrito{
+			display: inline-block;
+			margin: 0;
+			color: white;
+			font-weight: bold;
+			background-color: #adc700;
+			padding-left: 5%;
+			padding-right: 5%;
+			padding-top: 1%;
+			padding-bottom: 1%
+		}
+		.consejo{
+			background-color: #adc700;
+			color: white;
+			width: 80%; 
+			margin: auto; 
+			border-radius: 15px;
+			padding: 3%
+		}
+		.iconolengua{
+			display: inline-block;
+			height: 50px
+		}
+		.libro{
+			background-color: #adc700;
+    		display: table;
+    		width: 90%;
+    		margin: auto;
+    		padding-bottom: 5%;
+    		padding-top: 5%;
+    		padding-left: 5%;
+    		border-radius: 15px
+		}
+		.popup{
+			border: none;
+			box-shadow: none;
+			outline: none;
+			background-color: white;
+			color: #adc700;
+			font-size: 17px;
+			font-weight: bold;
+		}
 
 	</style>
 </head>
@@ -277,11 +313,11 @@
 			</div>
 			<div style="background-color: white" class="sumaresta">
 				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1b.png">
-				<span class="caption">PUNTUACIÓN</span><button style="background-color: white" class="forward">></button>
+				<span class="caption">PUNTUACIÓN</span><button onclick="goto_tutorial2_leng()" style="background-color: white" class="forward">></button>
 			</div>
 			<div style="background-color: white" class="sumaresta">
 				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1c.png">
-				<span class="caption">CONSEJOS Y EJERCICIOS</span><button style="background-color: white" class="forward">></button>
+				<span class="caption">CONSEJOS Y EJERCICIOS</span><button onclick="goto_tutorial3_leng()" style="background-color: white" class="forward">></button>
 			</div>
 		</div>
 
@@ -345,8 +381,8 @@
 	<div id="container_leng_tutorial1" style="display: none">
 		<div id="leng_tutorial1_page1">
 			<div class="parrafo">
-				<div>
-				<p style="font-size: 17.5px; display: inline-block;">
+				<div style="display: table;">
+				<p style="font-size: 17.5px; display: table-cell; vertical-align: middle;">
 				<strong>¿QUÉ ES LA ORTOGRAFÍA?</strong> 					
 				</p>
 				<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
@@ -380,8 +416,176 @@
 				</p>
 			</div>
 		</div>
+
+	<div id="container_leng_tutorial2" style="display: none">
+		<div id="leng_tutorial2_page1">
+			<div class="parrafo">
+				<div style="display: table;">
+					<p style="font-size: 17.5px; display: table-cell; margin-bottom: 0; vertical-align: middle;">
+						<strong>¿A QUÉ LLAMAMOS PUNTUACIÓN?</strong> 					
+					</p>
+					<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<ul>
+					<li>
+						<p class="lista">
+							Es un conjunto de signos ortográficos necesarios para señalar las pausas y entonación que se han de tener en cuenta para interpretar adecuadamente un texto.
+						</p>
+					</li>
+				</ul>
+					<p style="font-size: 17.5px; display: inline-block; padding-right: 5%">
+						<strong>¿CUÁLES SON ALGUNOS DE ESTOS SIGNOS DE PUNTUACIÓN?</strong> 
+					</p>
+					<p class="cuadrito">PUNTOS</p>
+				<ul>
+					<li>			
+						<p class="lista">
+							<strong style="color: black">El punto y seguido</strong> separa ideas acerca de un tema. Las oraciones separadas por un punto y seguido están en un mismo párrafo.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							<strong style="color: black">El punto y aparte</strong> indica el pasaje hacia una nueva información sobre el tema, facilitando una nueva lectura. Al utilizar el punto y aparte, la oración que sigue debe comenzar en párrafo aparte.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							<strong style="color: black">Punto final</strong>: el que cierra la idea de un escrito.
+						</p>
+					</li>
+				</ul>
+			</div>					
+		</div>
+
+		<div id="leng_tutorial2_page2" style="display: none">
+			<div class="parrafo">
+				<div style="display: table;">
+					<p class="cuadrito" style="margin-top: 7px; display: table-cell; vertical-align: middle; width: 80%">
+						<strong>USO DE MAYÚSCULAS</strong> 					
+					</p>
+					<img style="display: table-cell; vertical-align: middle;" class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+					<ul>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Al principio de un escrito.</strong> 
+							</p>
+						</li>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Después de punto y seguido, punto y aparte.</strong> 
+							</p>
+						</li>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Cuando escribimos nombres propios y los nombres dados a animales.</strong> 
+							</p>
+						</li>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Los nombres de los lugares.</strong> 
+							</p>
+						</li>
+					</ul>
+						<p style="font-size: 17.5px; display: inline-block; margin: 0">
+							<strong>¿QUÉ ES UNA ORACIÓN?</strong> 
+						</p>
+					<ul>
+						<li>			
+							<p class="lista">
+								Es una  palabra o un conjunto de palabras que se caracteriza por poseer sentido. Siempre  comienza con mayúscula y termina en  un punto.
+							</p>
+						</li>
+					</ul>
+						<p style="font-size: 17.5px; display: inline-block; margin: 0">
+							<strong>¿QUÉ ES UN PÁRRAFO?</strong> 
+						</p>
+					<ul>
+						<li>	
+							<p class="lista">
+								Es una idea conformada por un conjunto de oraciones  que comienzan con letra mayúscula y termina en un punto y aparte.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	<div id="container_leng_tutorial3" style="display: none">
+		<div id="leng_tutorial3_page1">
+			<div class="parrafo">
+				<div style="display: table;">
+					<p style="font-size: 17.5px; display: table-cell; margin-bottom: 0; width: 79%; vertical-align: middle;">
+						<strong>PARA DESARROLLAR LAS PRÁCTICAS DE LECTURA Y ESCRITURA DE NUESTROS HIJOS ES NECESARIO:</strong> 					
+					</p>
+					<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<ul>
+					<li>
+						<p class="lista">
+							Acompañar e incentivar el proceso de aprendizaje.
+						</p>
+					</li>
+					<li>			
+						<p class="lista">
+							Cuidar la ortografía y la puntuación mientras escriben.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							Garantizar un espacio para la escucha y reflexión sobre sus escritos.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							Recurrir a recursos confiables, como el diccionario o los contenidos de esta aplicación, para ayudarlos a resolver sus dudas.
+						</p>
+					</li>
+				</ul>
+			</div>
+			<div class="consejo">
+				<div>
+					<img style="display: inline-block;" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3b.png">
+					<span style="margin-right: 13vw; margin-top: 9%; float: right;"><strong>Para tener en cuenta</strong></span>
+				</div>
+				<p style="margin: 0">Resulta importante trabajar la ortografía y la puntuación desde y/o a partir de un texto para reflexionar sobre los usos del lenguaje en el contexto del escrito.</p>
+			</div>					
+		</div>
+
+		<div id="leng_tutorial3_page2" style="display: none">
+			<div style="margin-left: 5%">
+				<div style="height: 7vh">
+					<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<div>					
+					<div style="display: table; margin-bottom: 5%">
+						<img class="iconolengua" style="display: table-cell;" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3c.png"><span class="lista" style="display: table-cell; color: black; vertical-align: middle;">
+							Ofrecer a los niños distintos textos, pueden ser cuentos, y pedirles que intenten <strong>encontrar algunas palabras que cumplan con la regla ortográfica del primer tutorial (MP;MB; NV).</strong> 
+						</span>
+					</div>
+					<div style="display: table; margin-bottom: 5%">
+						<img class="iconolengua" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3d.png"><p class="lista" style="display: table-cell; color: black; vertical-align: middle;">
+							Con esas palabras que encontraron, y con el mismo uso ortográfico, <strong>buscar o <button onclick="document.getElementById('id01').style.display='block'" class="popup">pensar familia de palabras.</button></strong> 
+						</p>
+					</div>
+					<div style="display: table; margin-bottom: 5%">
+						<img class="iconolengua" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3e.png"><p class="lista" style="display: table-cell; color: black; vertical-align: middle;">
+							Si hay palabras que los chicos no comprenden su significado, una buena opción es <strong>buscarlas en el diccionario o a través del buscador de Google.</strong> 
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="libro">
+				<img style="height: 150px; display: table-cell; vertical-align: middle;" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3h.png">
+				<div style="display: table-cell; vertical-align: middle;">
+					<p class="lista" style="color: white; padding-left: 3%; padding-right: 3%">Pueden utilizar el siguiente cuento para que los chicos practiquen en casa</p>
+					<p class="lista" style="color: white; font-weight: bold; padding-left: 3%; padding-right: 3%">El lobo Rodolfo</p>
+				</div>
+			</div>
+		</div>
+
+		</div>	
 		
-	</div>
+	
 
 
 		<div class="pagination" id='pagination'>
@@ -394,12 +598,15 @@
 	</div>
 	
 	<script>
+
 	let home = document.getElementById('home');
 	let elegirLeng = document.getElementById('elegirLeng')
 	let elegirMat = document.getElementById('elegirMat');
 	let pickTutorialLeng = document.getElementById('pickTutorialLeng');
 	let pickTutorialMat = document.getElementById('pickTutorialMat');
 	let container_leng_tutorial1 = document.getElementById('container_leng_tutorial1');
+	let container_leng_tutorial2 = document.getElementById('container_leng_tutorial2');
+	let container_leng_tutorial3 = document.getElementById('container_leng_tutorial3');
 	let math_tutorial1_coverPage = document.getElementById('math_tutorial1_coverPage');
 	let container_math_tutorial1 = document.getElementById('container_math_tutorial1');
 	let pagination = document.getElementById('pagination');
@@ -417,6 +624,8 @@
 	let numPage = 0;
 	let numPagetutorial1_math = 0;
 	let numPagetutorial1_leng = 0;
+	let numPagetutorial2_leng = 0;
+	let numPagetutorial3_leng = 0;
 	let numberOfPages = 0
 	let buttonInit = document.getElementById('init')
 
@@ -473,7 +682,9 @@
 		tutorial_active = 'tutorial1_leng'
 		pickTutorialLeng.style.display = 'none'
 		container_leng_tutorial1.style.display = 'block'
-		navigation.push(pickTutorialLeng)	
+		if(navigation.indexOf(pickTutorialLeng) === -1){
+			navigation.push(pickTutorialLeng)	
+		}
 		actualScreen = container_leng_tutorial1
 
 		numberOfPages = 2
@@ -496,6 +707,85 @@
 		}
 
 	}
+	let firstIntoTutorial2Leng = true;
+	function goto_tutorial2_leng(){
+		numPage = numPagetutorial2_leng
+		tutorial_active = 'tutorial2_leng'
+		pickTutorialLeng.style.display = 'none'
+		container_leng_tutorial2.style.display = 'block'
+		navigation.push(pickTutorialLeng)	
+		actualScreen = container_leng_tutorial2
+
+		numberOfPages = 2
+		createDots(numberOfPages)
+
+		if(firstIntoTutorial2Leng){
+			numPage = 1
+			numPagetutorial2_leng = 1
+			// document.getElementById('leng_tutorial1_page1').style.display = 'block'
+			firstIntoTutorial2Leng = false
+		}
+		pagination.style.display = 'block'
+		showPagination = true
+		var coordenatePagination = pagination.getBoundingClientRect()
+		let container = document.getElementById("container_leng_tutorial2")
+		if((coordenatePagination.x + coordenatePagination.height )< container.scrollHeight){
+			pagination.style.position  = 'absolute'
+			pagination.style.top= container.scrollHeight + coordenatePagination.height + 100 + 'px'
+			pagination.style.bottom = '0px'
+		}
+	}
+	let firstIntoTutorial3Leng = true;
+	function goto_tutorial3_leng(){
+		numPage = numPagetutorial3_leng
+		tutorial_active = 'tutorial3_leng'
+		pickTutorialLeng.style.display = 'none'
+		container_leng_tutorial3.style.display = 'block'
+		navigation.push(pickTutorialLeng)	
+		actualScreen = container_leng_tutorial3
+
+		numberOfPages = 2
+		createDots(numberOfPages)
+
+		if(firstIntoTutorial3Leng){
+			numPage = 1
+			numPagetutorial3_leng = 1
+			// document.getElementById('leng_tutorial1_page1').style.display = 'block'
+			firstIntoTutorial3Leng = false
+		}
+		pagination.style.display = 'block'
+		showPagination = true
+		var coordenatePagination = pagination.getBoundingClientRect()
+		let container = document.getElementById("container_leng_tutorial3")
+		if((coordenatePagination.x + coordenatePagination.height )< container.scrollHeight){
+			pagination.style.position  = 'absolute'
+			//En estas funciones reemplazás container.scrollHeight por screen.height y vuelve a como estaba antes. No funciona del todo bien porque los tamaños de pagina cambian.
+			pagination.style.top= container.scrollHeight + coordenatePagination.height + 100 + 'px'
+			pagination.style.bottom = '0px'
+		}
+	}
+
+	// let firstIntoTutorial2Leng = true;
+	// function goto_tutorial2_leng(){
+	// 	numPage = numPagetutorial2_leng
+	// 	tutorial_active = 'tutorial2_leng'
+	// 	pickTutorialLeng.style.display = 'none'
+	// 	container_leng_tutorial2.style.display = 'block'
+	// 	if(navigation.indexOf(pickTutorialLeng) === -1){ 
+	// 		navigation.push(pickTutorialLeng)
+	// 	}
+	// 	actualScreen = container_leng_tutorial2
+	// 	// coverPageMat.style.display = 'block'
+	// 	numberOfPages = 2
+	// 	createDots(numberOfPages)
+	// 	console.log(numPage)
+	// 	if(firstIntoTutorial2Leng){
+	// 		numPage === 1
+	// 		firstIntoTutorial2Leng = false
+	// 	}
+	// 	pagination.style.display = 'block';
+		
+	// }
 
 	function back() {
 		if(showPagination){
@@ -557,15 +847,30 @@
 				document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active');
 				++numPagetutorial1_math	
 			}
+			if(tutorial_active == 'tutorial2_leng') {
+				document.getElementById('leng_tutorial2_page'+ actualPag).style.display = 'none';
+				document.getElementById('leng_tutorial2_page'+ nextPage).style.display = 'block';
+				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active');
+				++numPagetutorial2_leng	
+			}
+			if(tutorial_active == 'tutorial3_leng') {
+				document.getElementById('leng_tutorial3_page'+ actualPag).style.display = 'none';
+				document.getElementById('leng_tutorial3_page'+ nextPage).style.display = 'block';
+				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active');
+				++numPagetutorial3_leng	
+			}
 			numPage = nextPage
 		}
 
-		var coordenatePagination = pagination.getBoundingClientRect()
-		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-			pagination.style.position  = 'absolute'
-			pagination.style.top= screen.height - coordenatePagination.height + 'px'
-			pagination.style.bottom = '0px'
-		}
+		// var coordenatePagination = pagination.getBoundingClientRect()
+		// if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+		// 	let container = document.getElementById("container_leng_tutorial2")
+		// 	pagination.style.position  = 'absolute'
+		// 	pagination.style.top= container.scrollHeight - coordenatePagination.height + 'px'
+		// 	pagination.style.bottom = '0px'
+		// }
 
 	})
 
@@ -587,15 +892,29 @@
 				document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
 				--numPagetutorial1_math
 			}
+			if(tutorial_active == 'tutorial2_leng') {
+				document.getElementById('leng_tutorial2_page'+ actualPag).style.display = 'none';
+				document.getElementById('leng_tutorial2_page'+ previousPage).style.display = 'block';
+				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
+				--numPagetutorial2_leng
+			}
+			if(tutorial_active == 'tutorial3_leng') {
+				document.getElementById('leng_tutorial3_page'+ actualPag).style.display = 'none';
+				document.getElementById('leng_tutorial3_page'+ previousPage).style.display = 'block';
+				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
+				--numPagetutorial3_leng
+			}
 			numPage = previousPage
 		}
 
-		var coordenatePagination = pagination.getBoundingClientRect()
-		if((coordenatePagination.x + coordenatePagination.height )< screen.height){
-			pagination.style.position  = 'absolute'
-			pagination.style.top= screen.height - coordenatePagination.height + 'px'
-			pagination.style.bottom = '0px'
-		}
+		// var coordenatePagination = pagination.getBoundingClientRect()
+		// if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+		// 	pagination.style.position  = 'absolute'
+		// 	pagination.style.top= screen.height - coordenatePagination.height + 'px'
+		// 	pagination.style.bottom = '0px'
+		// }
 	})
 
 	</script>
