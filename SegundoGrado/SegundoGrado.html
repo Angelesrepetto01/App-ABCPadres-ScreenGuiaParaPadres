@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		@font-face {
+			font-family: 'DinRegular';
+			src: url('assets/Tipografia/DINNextRoundedLTPro-Regular.otf') format('opentype');
+		}
+		body {
+			font-family: 'DinREgular'
+		}
+		.main {
+			background-color: #ffffff;
+		}
+		.primaria{
+      		background-color: #f4f4f4;
+      		overflow: hidden;
+      		padding-left: 3%;
+      		height: 7vh
+    	}
+    	.imagen{
+      		vertical-align: middle;
+      		display: inline-block;
+      		height: 100%
+    	}
+    	.back{
+      		height: 100%;
+      		float: right;
+      		width: 15%;
+      		color: white;
+      		font-size: 30px;
+      		background-color: #cccccc;
+      		box-shadow: none;
+      		border: none;
+      		outline: none
+    	}
+    	.materia{
+			padding-top: 10%;
+			padding-bottom: 10%;
+			text-align: center
+		}
+		.caption{
+			vertical-align: middle;
+			text-align: left;
+			display: inline-block;
+			width: 50%
+		}
+		.boton{
+    		border: none;
+    		color: white;
+    		padding: 12px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+			width: 40%;
+    		margin: 4px 2px;
+    		cursor: pointer;
+    		border-radius: 8px;
+			outline: none;
+			box-shadow:none;
+		}
+		.lenguaje{
+			color: white;
+			background-color: #adc700
+		}
+		.matematica{
+			color: white;
+			background-color: #674b98
+		}
+		.mate{
+			padding-top: 10%;
+			padding-bottom: 10%;
+			padding-left: 5%;
+			border-bottom: 2px solid #dbdbdb
+		}
+		.mat{
+			color: #674b98;
+			font-weight: bold;
+		}
+		.leng{
+			color: #adc700;
+			font-weight: bold;	
+		}
+		.imagen2{
+			vertical-align: middle;
+			display: inline-block;
+			height: 8vh	
+		}
+		.sumaresta{
+			background-color: #f7f7f7;
+			height: 12vh;
+			padding-left: 8%;
+			padding-top: 5%;
+			border-bottom: 2px solid #dbdbdb
+		}	
+		.forward{
+			float: right;
+			padding-right: 8vw;
+			padding-top: 2vh;
+			background-color: #f7f7f7;
+			color: grey;
+			border: none;
+			box-shadow: none;
+			font-size: 30px; 
+		}
+		.container {
+			text-align: center;
+		}
+		.parrafo{
+			margin-left: 15%;
+			margin-top: 10%
+		}
+		ul {
+  			padding-left: 10%;
+  			margin-right: 10%;
+		}
+		li{
+			color: #adc700;
+			font-size: 38px;
+			margin-bottom: 3%
+		}
+		.lista{
+			color: #545454;
+			font-size: 18px;
+			font-weight: 200;
+			text-justify: inter-word;
+			margin-top: 0
+		}
+		.button {
+    		background-color: #adc700;
+    		border: none;
+    		color: white;
+    		padding: 20px;
+    		text-align: center;
+    		text-decoration: none;
+    		display: inline-block;
+    		font-size: 16px;
+    		margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 8px;
+		}
+		.text {
+			color: #674b89;
+		}
+		.number {
+			color: #adc700;
+		}
+		.imgTutorial {
+			width: 100%
+		}
+		.pagination {
+			position: relative;
+			bottom: 5px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			text-align: center;
+		}
+		.pagination__dot {
+			position: relative;
+			width: 8px;
+			height: 8px;
+			border: 2px solid gray;
+			border-radius: 100px;
+			display: inline-block;
+			cursor: pointer;
+			margin: 0 4px;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+		.pagination__next_privous {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			font-size: 5vh;
+			color: grey;
+			margin: 0 50px;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+		.pagination__dot--active {
+			background: gray;
+		}
+		.corazon{
+			width: 50px;
+			float: right;
+			margin-right: 6%;
+			vertical-align: middle;
+		}
+		.cuadrito{
+			display: inline-block;
+			margin: 0;
+			color: white;
+			font-weight: bold;
+			background-color: #adc700;
+			padding-left: 5%;
+			padding-right: 5%;
+			padding-top: 1%;
+			padding-bottom: 1%
+		}
+		/*.consejo{
+			background-color: #adc700;
+			color: white;
+			width: 80%; 
+			margin: auto; 
+			border-radius: 15px;
+			padding: 3%
+		}
+		.iconolengua{
+			display: inline-block;
+			height: 50px
+		}
+		.libro{
+			background-color: #adc700;
+    		display: table;
+    		width: 90%;
+    		margin: auto;
+    		padding-bottom: 5%;
+    		padding-top: 5%;
+    		padding-left: 5%;
+    		border-radius: 15px
+		}*/
+		.popup{
+			border: none;
+			box-shadow: none;
+			outline: none;
+			background-color: white;
+			color: #adc700;
+			font-size: 17px;
+			font-weight: bold;
+		}
+		#alertEstrategia{
+			position: absolute;
+			margin: auto;
+			background-color: #adc700;
+			width: 70%;
+  			height: 40%;
+  			position: absolute;
+  			top: 40%;
+  			left: 10%;
+  			padding-left: 5%;
+  			padding-right: 5%;
+  			border-radius: 15px
+		}
+		.textAlert{
+			font-size: 18px;
+			color: white;
+			font-weight: bold
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+			<div class="primaria">
+					<img class="imagen" src="assets/MenuPrincipal/01_icono_menu_p.png">
+					<div class="caption"><span>PRIMARIA: 2do año</span></div>
+					<button class="back" onclick="back()"><</button>
+			</div>
+
+			<div id='home'>
+  				<div class="materia">
+					<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+					<span class="caption">PRÁCTICAS DEL LENGUAJE</span>
+					<div style="padding-top: 5%">
+						<button class="boton lenguaje">Tutoriales</button>
+						<button class="boton lenguaje">Aprender jugando</button>
+					</div>
+				</div>
+				<div class="materia" style="background-color: #f7f7f7">
+					<img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+					<span class="caption">MATEMÁTICA</span>
+					<div style="padding-top: 5%">
+						<button class="boton matematica" onclick="enterMath()">Tutoriales</button>
+						<button class="boton matematica">Aprender jugando</button>
+					</div>
+				</div>
+			</div>
+
+		<div id="elegirMat">
+			<div class="mate">
+				<img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+				<span class="caption mat">MATEMÁTICA</span>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+				<span class="caption">SUMA Y RESTA</span><button onclick="sumas()" class="forward">></button>
+			</div>
+		</div>
+
+		<!-- <div id="elegirLeng">
+			<div class="mate">
+				<img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+				<span class="caption leng">PRÁCTICAS DEL LENGUAJE</span>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1.png">
+				<span class="caption">Ortografía y puntuación</span><button class="forward">></button>
+			</div>
+		</div> -->
+
+		<div id="pickTutorialMat">
+			<div class="mate">
+				<img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+				<span class="caption mat">SUMA Y RESTA</span>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+				<span class="caption">TUTORIAL 1</span><button class="forward" onclick="goto_tutorial1_math()" >></button>
+			</div>
+			<div class="sumaresta">
+				<img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+				<span class="caption">TUTORIAL 2</span><button class="forward" onclick="goto_tutorial2_math()">></button>
+			</div>
+		</div>
+		
+		<!-- <div id="pickTutorialLeng">
+			<div class="mate">
+				<img class="imagen" src="assets/PracticasLenguaje/01_icono_menu_practicas.png">
+				<span class="caption leng">ORTOGRAFÍA Y PUNTUACIÓN</span>
+			</div>
+			<div class="sumaresta">
+				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1.png">
+				<span class="caption">ORTOGRAFÍA: USO DE LA “MB” / “MP” / “NV”</span><button onclick="goto_tutorial1_leng()" class="forward">></button>
+			</div>
+			<div style="background-color: white" class="sumaresta">
+				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1b.png">
+				<span class="caption">PUNTUACIÓN</span><button onclick="goto_tutorial2_leng()" style="background-color: white" class="forward">></button>
+			</div>
+			<div style="background-color: white" class="sumaresta">
+				<img class="imagen2" src="assets/PracticasLenguaje/01_icono_practicas_tutorial1c.png">
+				<span class="caption">CONSEJOS Y EJERCICIOS</span><button onclick="goto_tutorial3_leng()" style="background-color: white" class="forward">></button>
+			</div>
+		</div> -->
+
+		<div id="container_math_tutorial1" style="display: none">
+			<div id="math_tutorial1_coverPage">
+			<div><img style="padding-left: 90%; padding-top: 5%" src="assets/Matematica/02_icono_mat_fav_off.png"></div>
+				<div class="container">
+					<img src="assets/Matematica/02_icono_mat_tutorial1.png">
+					<p>
+					<span class="text">	Carla tiene</span> <span class="number">$52</span> <span class="text">y compra una gaseosa de </span><span class="number">$17.</span> 					
+					</p>
+					<p>
+						¿Cuánto dinero le queda?
+					</p>
+		
+					<button class="button" id="init" onclick="initTutorial1_Math()"><span>¡APRENDE A RESOLVERLO!</span></button>
+				</div>
+			
+			</div>
+
+			<div id="math_tutorial1_page1" style="display: none; padding: 10%">
+				<div style="display: table; vertical-align: middle;"><h3 style="display: table-cell;"><span style="color: purple; font-size: 25px">•</span> Primera resolución posible</h3><img style="display: table-cell; margin-left: 200%" src="assets/Matematica/02_icono_mat_fav.png"></div>
+
+				<p> Es posible que lo resuelvan con el método que les da más seguridad, como apoyarse en los <strong> billetes de $10</strong> y <strong>monedas de $1</strong> que es como lo venían trabajando en <strong>1 año.</strong></p>
+
+				<p>Los <strong>$52</strong> los representan con <strong>cinco billetes de $10</strong> y <strong>dos monedas de $1</strong></p>
+
+				<img src="assets/Matematica/02_icono_mat_tutorial1c.png" class="imgTutorial">
+				
+				<p>Como un billete de <strong>$10</strong> es equivalente a <strong>diez monedas de $1</strong> reemplazan un billete por las monedas:</p>
+
+				<img src="assets/Matematica/02_icono_mat_tutorial1d.png" class="imgTutorial">
+
+				<p>Luego, le <strong>sacan los $17:</strong> un billete de <strong>$10</strong> y <strong>siete monedas de $1</strong></p>
+
+				<img src="assets/Matematica/02_icono_mat_tutorial1e.png" class="imgTutorial">
+				<p>De esta manera, ven que les quedan <strong>tres billetes de $10</strong> y <strong>5 monedas de $1.</strong> Por lo tanto el resultado, el dinero que le queda a Carla es</p>
+
+				<div style="text-align: center;"><img style="width: 20%" src="assets/Matematica/02_icono_mat_tutorial1f.png" class="imgTutorial"></div>
+		</div>
+
+		<div id="math_tutorial1_page2" style="display: none; padding: 10%">
+				<div style="display: table; vertical-align: middle;"><h3 style="display: table-cell;"><span style="color: purple; font-size: 25px">•</span> Segunda resolución posible</h3><img style="display: table-cell; margin-left: 200%" src="assets/Matematica/02_icono_mat_fav.png"></div>
+
+				<p> Descomponer a los números <strong> 52</strong> y <strong>17</strong> de manera conveniente. Al hacerlo, quedan dos igualdades</p>
+
+				<div style="text-align: center;"><img style="width: 30%" src="assets/Matematica/02_icono_mat_tutorial1g.png" class="imgTutorial"></div>
+				
+				<p>Al tener que calcular <strong>52 - 17</strong>, significa pensar en la resta en ambos lados de las igualdades anteriores. Noten que sólo se resta la igualdad de abajo y presten atención  a los colores:</p>
+
+				<div style="text-align: center;"><img style="width: 65%" src="assets/Matematica/02_icono_mat_tutorial1h.png" class="imgTutorial"></div>
+
+				<p>Los chicos ,con la guía del docente, lo piensan de la siguiente manera:</p>
+				
+				<div style="text-align: center"><img style="width: 20%" src="assets/Matematica/02_icono_mat_tutorial1i.png" class="imgTutorial"></div>
+				
+				<p>Descomponer al <strong>52</strong> y al <strong>17</strong> de manera conveniente  para restar primero <strong>10</strong> al <strong>50</strong> (que les da 40)</p>
+				
+				<div style="text-align: center;"><img style="width: 33%" src="assets/Matematica/02_icono_mat_tutorial1j.png" class="imgTutorial"></div>
+				
+				<p>y luego a esos <strong>40</strong> sacarle los <strong>7</strong> que le faltaban restar. Eso les da como resultado <strong>33.</strong></p>
+				
+				<div style="text-align: center;"><img style="width: 30%" src="assets/Matematica/02_icono_mat_tutorial1k.png" class="imgTutorial"></div>
+				
+				<p>A estos <strong>33</strong> luego le tienen que sumar los <strong>2</strong> del <strong>52</strong> y llegan así al resultado final que es <strong>35.</strong></p>
+
+				<div style="text-align: center;"><img style="width: 40%" src="assets/Matematica/02_icono_mat_tutorial1l.png" class="imgTutorial"></div>
+
+				<p>y lo pueden escribir así:</p>
+
+				<div style="text-align: center;"><img style="width: 25%" src="assets/Matematica/02_icono_mat_tutorial1m.png"></div>
+
+				<div style="display: table; margin-top: 10%; width: 100%">
+					<img style="display: table-cell; vertical-align: middle;" src="assets/Matematica/02_icono_mat_tenerencuenta.png">
+					<p style="display: table-cell; vertical-align: middle"><strong>Para tener en cuenta</strong></p>
+				</div>
+				
+				<p>Un error común en el que los chicos suelen caer es en hacer:</p>
+
+				<div style="text-align: center;"><img src="assets/Matematica/02_icono_mat_tutorial1n.png"></div>
+
+				<p>El error que cometen es cambiar el orden de las unidades en la resta, pues el 7 le pertenece al número que se debe restar: al 17. Y en este caso el que están restando es el 2.</p>
+
+				<p>Esto se puede ver cuando pensamos en la resta de ambas igualdades: sólo la igualdad de abajo RESTA (en rojo).La igualdad de arriba, SUMA.</p>
+
+				<div style="background-color: #dbdbdb; padding: 7%; border-radius: 15px">
+					<div style="display: table">
+						<img style="display: table-cell; vertical-align: middle;" src="assets/Matematica/02_icono_mat_signopregunta.png">
+						<p style="display: table-cell; vertical-align: middle; padding-left: 3%"><strong>¿Por qué utilizamos diferentes colores en los cálculos?</strong></p>
+					</div>
+					<p style="margin-top: 15%">Para un mejor seguimiento de las operaciones numéricas. En este caso, para no mezclar términos de las igualdades (respetamos las columnas de las decenas y de las unidades) y poder seguir el desarrollo de la estrategia de cálculo.</p>
+				</div>
+
+		</div>
+		
+		<div id="math_tutorial1_page3" style="display: none; padding: 10%">
+			<div class="blurry" style="display: table; vertical-align: middle;"><h3 style="display: table-cell;"><span style="color: purple; font-size: 25px">•</span>Tercera resolución posible</h3><img style="display: table-cell; margin-left: 200%" src="assets/Matematica/02_icono_mat_fav.png"></div>
+
+				<p class="blurry"> Una última <button style="border: none; outline: none; background-color: white; font-size: 16px; font-weight: bold" onclick="activateEstrategia()">estrategia</button> de resolución es descomponer los números 52 y 17</p>
+
+				<div style="text-align: center;"><img style="width: 35%" src="assets/Matematica/02_icono_mat_tutorial1g.png" class="imgTutorial blurry"></div>
+
+				<p class="blurry">Las posibilidades de pensar la resta son varias. Una podría ser <strong>restar 50-10=40</strong></p>
+
+				<div style="text-align: center;"><img style="width: 65%" src="assets/Matematica/02_icono_mat_tutorial1q.png" class="imgTutorial blurry"></div>
+
+				<p class="blurry">y de este <strong>40</strong> sacamos lo necesario para igualar las unidades de ambos números</p>
+
+				<div style="text-align: center;"><img style="width: 66%" src="assets/Matematica/02_icono_mat_tutorial1r.png" class="imgTutorial blurry"></div>
+
+				<p class="blurry">deben ser = por lo tanto, al 40 le sacamos 5</p>
+
+				<div style="text-align: center;"><img style="width: 80%" src="assets/Matematica/02_icono_mat_tutorial1s.png" class="blurry"></div>
+
+				<div style="text-align: center; margin-top: 12%"><img style="width: 80%" src="assets/Matematica/02_icono_mat_tutorial1t.png" class="imgTutorial blurry"></div>
+
+				<p class="blurry">Sólo queda hacer la resta de las unidades: <strong>7 - 7=0</strong></p>
+
+				<div style="text-align: center;"><img style="width: 80%" src="assets/Matematica/02_icono_mat_tutorial1u.png" class="imgTutorial blurry"></div>
+				
+				<p>También podrían pensar en sacarle al 50 (lo que llamamos pedirle prestado) los 5 que necesita el 2:</p>
+
+				<img src="assets/Matematica/02_icono_mat_tutorial1v.png" class="imgTutorial">
+
+				<div id='alertEstrategia'>
+					<button style="float: right; margin-top: 5%; color: white; font-weight: bold; border: none; background-color: #adc700; box-shadow: none; outline: none" onclick="reverseEstrategia()">X</button>
+  					<p class="textAlert">Comprender que un número puede componerse y descomponerse en distintas partes, y que esto puede hacerse de formas muy diversas, ayuda a los niños a desarrollar diferentes estrategias de cálculo</p>
+				</div>
+
+		</div>
+
+	</div>
+	<div id="container_math_tutorial2" style="display: none">
+			<div id="math_tutorial2_coverPage">
+			<div><img style="padding-left: 90%; padding-top: 5%" src="assets/Matematica/02_icono_mat_fav_off.png"></div>
+				<div class="container">
+					<img src="assets/Matematica/02_icono_mat_tutorial2.png">
+					<p>
+					<span class="text">	Carla tiene</span> <span class="number">$52</span> <span class="text">y compra una gaseosa de </span><span class="number">$17.</span> 					
+					</p>
+					<p>
+						¿Cuánto dinero le queda?
+					</p>
+		
+					<button class="button" id="init" onclick="initTutorial2_Math()"><span>¡APRENDE A RESOLVERLO!</span></button>
+				</div>
+			
+			</div>
+
+			<div id="math_tutorial2_page1" style="display: none; padding: 10%">
+				<div style="display: table; vertical-align: middle;"><h3 style="display: table-cell;"><span style="color: purple; font-size: 25px">•</span> Primera resolución posible</h3><img style="display: table-cell; margin-left: 200%" src="assets/Matematica/02_icono_mat_fav.png"></div>
+
+				<p> Pueden utilizar cualquiera de los procedimientos del tutorial 1. Por ejemplo:</p>
+
+				<p><strong>descomponer los números 83 y 47 en</strong></p>
+
+				<div style="text-align: center;"><img style="width: 35%" src="assets/Matematica/02_icono_mat_tutorial2a.png" class="imgTutorial"></div>
+				
+				<p>Entonces le restan primero <strong>40 al 80,</strong> lo que les da como resultado <strong>40.</strong> A este 40 le restan los 7 que faltan <strong>(40 - 7 = 33)</strong>. Y a estos 33, le suman los 3 del 83 -> 33 + 3 = 36</p>
+
+				<div style="text-align: center"><img style="width: 38%" src="assets/Matematica/02_icono_mat_tutorial2b.png" class="imgTutorial"></div>
+
+			</div>
+
+	</div>
+
+	<!-- <div id="container_leng_tutorial1" style="display: none">
+		<div id="leng_tutorial1_page1">
+			<div class="parrafo">
+				<div style="display: table;">
+				<p style="font-size: 17.5px; display: table-cell; vertical-align: middle;">
+				<strong>¿QUÉ ES LA ORTOGRAFÍA?</strong> 					
+				</p>
+				<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<ul>
+					<li>
+					<p class="lista">
+						Es la forma correcta de escribir palabras respetando reglas.
+					</p>
+					</li>
+					<li>			
+					<p class="lista">
+						Estas reglas nos permiten identificar, por ejemplo, cuándo se usa la “c”, la “s” o la “z”; cuándo la “y” o la “ll” o cuando se usa la “v” o la “b” y ayudarnos cuando tenemos dudas sobre cuál de estas letras deberíamos usar.
+					</p>
+					</li>
+					<li>	
+					<p class="lista">
+						En este primer nivel, vamos a hacer hincapié en el uso de la MP, MB y NV.
+					</p>
+					</li>
+				</div>					
+			</div>
+
+			<div id="leng_tutorial1_page2" style="display: none">
+				<p>Para ello, es importante recordar que la forma correcta de escribir palabras que tienen estas letras combinadas es: </p>
+
+				<img src="assets/PracticasLenguaje/01_icono_practicas_tutorial1d.png" class="imgTutorial">
+				
+				<p>Esta regla ortográfica nos puede resultar de ayuda cuando tenemos dudas sobre la escritura de una palabra. Por ejemplo, 
+					¿se escribe “compartir” o “conpartir”? 
+				</p>
+			</div>
+		</div> -->
+
+	<!-- <div id="container_leng_tutorial2" style="display: none">
+		<div id="leng_tutorial2_page1">
+			<div class="parrafo">
+				<div style="display: table;">
+					<p style="font-size: 17.5px; display: table-cell; margin-bottom: 0; vertical-align: middle;">
+						<strong>¿A QUÉ LLAMAMOS PUNTUACIÓN?</strong> 					
+					</p>
+					<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<ul>
+					<li>
+						<p class="lista">
+							Es un conjunto de signos ortográficos necesarios para señalar las pausas y entonación que se han de tener en cuenta para interpretar adecuadamente un texto.
+						</p>
+					</li>
+				</ul>
+					<p style="font-size: 17.5px; display: inline-block; padding-right: 5%">
+						<strong>¿CUÁLES SON ALGUNOS DE ESTOS SIGNOS DE PUNTUACIÓN?</strong> 
+					</p>
+					<p class="cuadrito">PUNTOS</p>
+				<ul>
+					<li>			
+						<p class="lista">
+							<strong style="color: black">El punto y seguido</strong> separa ideas acerca de un tema. Las oraciones separadas por un punto y seguido están en un mismo párrafo.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							<strong style="color: black">El punto y aparte</strong> indica el pasaje hacia una nueva información sobre el tema, facilitando una nueva lectura. Al utilizar el punto y aparte, la oración que sigue debe comenzar en párrafo aparte.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							<strong style="color: black">Punto final</strong>: el que cierra la idea de un escrito.
+						</p>
+					</li>
+				</ul>
+			</div>					
+		</div>
+
+		<div id="leng_tutorial2_page2" style="display: none">
+			<div class="parrafo">
+				<div style="display: table;">
+					<p class="cuadrito" style="margin-top: 7px; display: table-cell; vertical-align: middle; width: 80%">
+						<strong>USO DE MAYÚSCULAS</strong> 					
+					</p>
+					<img style="display: table-cell; vertical-align: middle;" class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+					<ul>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Al principio de un escrito.</strong> 
+							</p>
+						</li>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Después de punto y seguido, punto y aparte.</strong> 
+							</p>
+						</li>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Cuando escribimos nombres propios y los nombres dados a animales.</strong> 
+							</p>
+						</li>
+						<li>
+							<p class="lista" style="color: black">
+								<strong>Los nombres de los lugares.</strong> 
+							</p>
+						</li>
+					</ul>
+						<p style="font-size: 17.5px; display: inline-block; margin: 0">
+							<strong>¿QUÉ ES UNA ORACIÓN?</strong> 
+						</p>
+					<ul>
+						<li>			
+							<p class="lista">
+								Es una  palabra o un conjunto de palabras que se caracteriza por poseer sentido. Siempre  comienza con mayúscula y termina en  un punto.
+							</p>
+						</li>
+					</ul>
+						<p style="font-size: 17.5px; display: inline-block; margin: 0">
+							<strong>¿QUÉ ES UN PÁRRAFO?</strong> 
+						</p>
+					<ul>
+						<li>	
+							<p class="lista">
+								Es una idea conformada por un conjunto de oraciones  que comienzan con letra mayúscula y termina en un punto y aparte.
+							</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div> -->
+	<!-- <div id="container_leng_tutorial3" style="display: none">
+		<div id="leng_tutorial3_page1">
+			<div class="parrafo">
+				<div style="display: table;">
+					<p style="font-size: 17.5px; display: table-cell; margin-bottom: 0; width: 79%; vertical-align: middle;">
+						<strong>PARA DESARROLLAR LAS PRÁCTICAS DE LECTURA Y ESCRITURA DE NUESTROS HIJOS ES NECESARIO:</strong> 					
+					</p>
+					<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<ul>
+					<li>
+						<p class="lista">
+							Acompañar e incentivar el proceso de aprendizaje.
+						</p>
+					</li>
+					<li>			
+						<p class="lista">
+							Cuidar la ortografía y la puntuación mientras escriben.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							Garantizar un espacio para la escucha y reflexión sobre sus escritos.
+						</p>
+					</li>
+					<li>	
+						<p class="lista">
+							Recurrir a recursos confiables, como el diccionario o los contenidos de esta aplicación, para ayudarlos a resolver sus dudas.
+						</p>
+					</li>
+				</ul>
+			</div>
+			<div class="consejo">
+				<div>
+					<img style="display: inline-block;" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3b.png">
+					<span style="margin-right: 13vw; margin-top: 9%; float: right;"><strong>Para tener en cuenta</strong></span>
+				</div>
+				<p style="margin: 0">Resulta importante trabajar la ortografía y la puntuación desde y/o a partir de un texto para reflexionar sobre los usos del lenguaje en el contexto del escrito.</p>
+			</div>
+
+		</div>
+
+		<div id="leng_tutorial3_page2" style="display: none">
+			<div class="blurry" style="margin-left: 5%">
+				<div style="height: 7vh">
+					<img class="corazon" src="assets/Matematica/01_icono_mat_favorito1.png">
+				</div>
+				<div>					
+					<div style="display: table; margin-bottom: 5%">
+						<img class="iconolengua" style="display: table-cell;" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3c.png"><span class="lista" style="display: table-cell; color: black; vertical-align: middle;">
+							Ofrecer a los niños distintos textos, pueden ser cuentos, y pedirles que intenten <strong>encontrar algunas palabras que cumplan con la regla ortográfica del primer tutorial (MP;MB; NV).</strong> 
+						</span>
+					</div>
+					<div style="display: table; margin-bottom: 5%">
+						<img class="iconolengua" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3d.png"><p class="lista" style="display: table-cell; color: black; vertical-align: middle;">
+							Con esas palabras que encontraron, y con el mismo uso ortográfico, <strong>buscar o <button onclick="activateFamiliaPalabras()" class="popup">pensar familia de palabras.</button></strong> 
+						</p>
+					</div>
+					<div style="display: table; margin-bottom: 5%">
+						<img class="iconolengua" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3e.png"><p class="lista" style="display: table-cell; color: black; vertical-align: middle;">
+							Si hay palabras que los chicos no comprenden su significado, una buena opción es <strong>buscarlas en el diccionario o a través del buscador de Google.</strong> 
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="libro blurry">
+				<img style="height: 150px; display: table-cell; vertical-align: middle;" src="assets/PracticasLenguaje/01_icono_practicas_tutorial3h.png">
+				<div style="display: table-cell; vertical-align: middle;">
+					<p class="lista" style="color: white; padding-left: 3%; padding-right: 3%">Pueden utilizar el siguiente cuento para que los chicos practiquen en casa</p>
+					<p class="lista" style="color: white; font-weight: bold; padding-left: 3%; padding-right: 3%">El lobo Rodolfo</p>
+				</div>
+			</div>
+			<div id='alertFamiliaPalabras'>
+			<button style="float: right; margin-top: 5%; color: white; font-weight: bold; border: none; background-color: #adc700; box-shadow: none; outline: none" onclick="reverseAlertFamilia()">X</button>
+  			<p class="textAlert">Es un conjunto de palabras que comparten la misma raíz.</p>
+  			<p class='textAlert'>Ej:</p>
+  			<p class='textAlert'>campo - campesino -  campero.</p>
+  			<p class='textAlert'>envase - envasado - envasadora.</p>
+  			<p class='textAlert'>sombra - sombrilla - sombreado.</p>
+		</div>
+		</div>
+	</div> -->
+	<div class="pagination" id='pagination'>
+			<div class="pagination__next_privous" id="previous">&laquo;</div>
+			<div id="pagitation_dots" style="display: inline-block;">
+			</div>
+			<div class="pagination__next_privous" id="next">&raquo;</div>			
+		</div>
+	</div>
+	
+	<script>
+	let home = document.getElementById('home');
+	//let elegirLeng = document.getElementById('elegirLeng')
+	let elegirMat = document.getElementById('elegirMat');
+	//let pickTutorialLeng = document.getElementById('pickTutorialLeng');
+	let pickTutorialMat = document.getElementById('pickTutorialMat');
+	//let container_leng_tutorial1 = document.getElementById('container_leng_tutorial1');
+	//let container_leng_tutorial2 = document.getElementById('container_leng_tutorial2');
+	//let container_leng_tutorial3 = document.getElementById('container_leng_tutorial3');
+	let alertEstrategia = document.getElementById('alertEstrategia');
+	let math_tutorial1_coverPage = document.getElementById('math_tutorial1_coverPage');
+	let container_math_tutorial1 = document.getElementById('container_math_tutorial1');
+	let container_math_tutorial2 = document.getElementById('container_math_tutorial2');
+	let pagination = document.getElementById('pagination');
+	let navigation = [];
+	let actualScreen = null;
+	let showPagination = false;
+	let tutorial_active = null;
+
+	//elegirLeng.style.display = 'none'
+	elegirMat.style.display = 'none'
+	//pickTutorialLeng.style.display = 'none'
+	alertEstrategia.style.display = 'none'
+	pickTutorialMat.style.display = 'none'
+	pagination.style.display = 'none'
+	
+	let numPage = 0;
+	let numPagetutorial1_math = 0;
+	let numPagetutorial2_math = 0;
+	//let numPagetutorial1_leng = 0;
+	//let numPagetutorial2_leng = 0;
+	//let numPagetutorial3_leng = 0;
+	let numberOfPages = 0
+	let buttonInit = document.getElementById('init')
+	
+	//boton lenguaje
+	// function enterLeng() {
+	// 	home.style.display = 'none'
+	// 	elegirLeng.style.display = 'block'
+	// 	navigation.push(home)
+	// 	actualScreen = elegirLeng
+	// }
+	function enterMath() {
+		home.style.display = 'none'
+		elegirMat.style.display = 'block'
+		navigation.push(home)
+		actualScreen = elegirMat
+	}
+	//boton ortografia
+	// function ortografia() {
+	// 	elegirLeng.style.display = 'none'
+	// 	pickTutorialLeng.style.display = 'block'
+	// 	navigation.push(elegirLeng)
+	// 	actualScreen = pickTutorialLeng
+	// } 
+	function sumas(){
+		elegirMat.style.display = 'none'
+		pickTutorialMat.style.display = 'block'
+		navigation.push(elegirMat)
+		actualScreen = pickTutorialMat
+	}
+	let firstIntoTutorial1Math = true;
+	function goto_tutorial1_math(){
+		numPage = numPagetutorial1_math
+		// console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
+		tutorial_active = 'tutorial1_math'
+		pickTutorialMat.style.display = 'none'
+		container_math_tutorial1.style.display = 'block'
+		navigation.push(pickTutorialMat)
+		actualScreen = container_math_tutorial1
+		// coverPageMat.style.display = 'block'
+		numberOfPages = 3
+		createDots(numberOfPages)
+		if(numPage > 0){
+			pagination.style.display = 'block';
+		}
+	}
+	let firstIntoTutorial2Math = true;
+	function goto_tutorial2_math(){
+		numPage = numPagetutorial2_math
+		// console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
+		tutorial_active = 'tutorial2_math'
+		pickTutorialMat.style.display = 'none'
+		container_math_tutorial2.style.display = 'block'
+		navigation.push(pickTutorialMat)
+		actualScreen = container_math_tutorial2
+		// coverPageMat.style.display = 'block'
+		numberOfPages = 1
+		createDots(numberOfPages)
+		if(numPage > 0){
+			pagination.style.display = 'block';
+		}
+	}
+
+	// let firstIntoTutorial1Leng = true;
+	// function goto_tutorial1_leng(){
+	// 	numPage = numPagetutorial1_leng
+	// 	// console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
+	// 	tutorial_active = 'tutorial1_leng'
+	// 	pickTutorialLeng.style.display = 'none'
+	// 	container_leng_tutorial1.style.display = 'block'
+	// 	if(navigation.indexOf(pickTutorialLeng) === -1){
+	// 		navigation.push(pickTutorialLeng)	
+	// 	}
+	// 	actualScreen = container_leng_tutorial1
+	// 	numberOfPages = 2
+	// 	createDots(numberOfPages)
+	// 	if(firstIntoTutorial1Leng){
+	// 		numPage = 1
+	// 		numPagetutorial1_leng = 1
+	// 		// document.getElementById('leng_tutorial1_page1').style.display = 'block'
+	// 		firstIntoTutorial1Leng = false
+	// 	}
+	// 	pagination.style.display = 'block'
+	// 	showPagination = true
+	// 	var coordenatePagination = pagination.getBoundingClientRect()
+	// 	if((coordenatePagination.x + coordenatePagination.height )< screen.height){
+	// 		console.log(coordenatePagination.x)
+	// 		pagination.style.position  = 'absolute'
+	// 		// pagination.style.positionTop = '532px'
+	// 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+	// 		pagination.style.bottom = '0px'
+	// 	}
+	// }
+	// let firstIntoTutorial2Leng = true;
+	// function goto_tutorial2_leng(){
+	// 	numPage = numPagetutorial2_leng
+	// 	tutorial_active = 'tutorial2_leng'
+	// 	pickTutorialLeng.style.display = 'none'
+	// 	container_leng_tutorial2.style.display = 'block'
+	// 	navigation.push(pickTutorialLeng)	
+	// 	actualScreen = container_leng_tutorial2
+	// 	numberOfPages = 2
+	// 	createDots(numberOfPages)
+	// 	if(firstIntoTutorial2Leng){
+	// 		numPage = 1
+	// 		numPagetutorial2_leng = 1
+	// 		// document.getElementById('leng_tutorial1_page1').style.display = 'block'
+	// 		firstIntoTutorial2Leng = false
+	// 	}
+	// 	pagination.style.display = 'block'
+	// 	showPagination = true
+	// 	var coordenatePagination = pagination.getBoundingClientRect()
+	// 	let container = document.getElementById("container_leng_tutorial2")
+	// 	if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+	// 	 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+	// 	 	pagination.style.position  = 'absolute'
+	// 	 	if(screen.height<container.scrollHeight){
+	// 	 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 +'px'
+	// 	 	}
+	// 	 	else{
+	// 	 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+	// 		}
+	// 		pagination.style.bottom = '0px'
+	// 	 }
+	// }
+	// let firstIntoTutorial3Leng = true;
+	// function goto_tutorial3_leng(){
+	// 	numPage = numPagetutorial3_leng
+	// 	tutorial_active = 'tutorial3_leng'
+	// 	pickTutorialLeng.style.display = 'none'
+	// 	container_leng_tutorial3.style.display = 'block'
+	// 	navigation.push(pickTutorialLeng)	
+	// 	actualScreen = container_leng_tutorial3
+	// 	numberOfPages = 2
+	// 	createDots(numberOfPages)
+	// 	if(firstIntoTutorial3Leng){
+	// 		numPage = 1
+	// 		numPagetutorial3_leng = 1
+	// 		// document.getElementById('leng_tutorial1_page1').style.display = 'block'
+	// 		firstIntoTutorial3Leng = false
+	// 	}
+	// 	pagination.style.display = 'block'
+	// 	showPagination = true
+	// 	var coordenatePagination = pagination.getBoundingClientRect()
+	// 	let container = document.getElementById("container_leng_tutorial3")
+	// 	if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+	// 	 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+	// 	 	pagination.style.position  = 'absolute'
+	// 	 	if(screen.height<container.scrollHeight){
+	// 	 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+	// 	 	}
+	// 	 	else{
+	// 	 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+	// 		}
+	// 		pagination.style.bottom = '0px'
+	// 	 }
+	// }
+
+	function activateEstrategia(){
+		var elements = document.querySelectorAll('.blurry');
+		for(var i=0; i<elements.length; i++){
+    		elements[i].style.opacity= "0.2"
+		}
+		alertEstrategia.style.display = 'block'
+	}
+	function reverseEstrategia(){
+		var elements = document.querySelectorAll('.blurry');
+		for(var i=0; i<elements.length; i++){
+    		elements[i].style.opacity= "1"
+		}
+		alertEstrategia.style.display = 'none'		
+	}
+	function back() {
+		if(showPagination){
+			pagination.style.display = 'none'	
+		}
+		if(navigation.length > 0) {
+			actualScreen.style.display = 'none' 
+			navigation[navigation.length -1].style.display = 'block'
+			actualScreen = navigation.pop()
+		}
+	}
+	function createDots(numDots) {
+		let listDots = document.getElementById('pagitation_dots')
+		while (listDots.hasChildNodes()) {   
+			listDots.removeChild(listDots.firstChild);
+		}
+		for (var i = 1; i <= numDots; i++) {
+			let element = '<div class="pagination__dot" id="dot' + i + '"></div>'
+			document.getElementById('pagitation_dots').insertAdjacentHTML('beforeend', element);
+		}
+		let dot_active = numPage?numPage:1
+		document.getElementById('dot'+ dot_active).classList.add('pagination__dot--active')
+	}
+	function initTutorial1_Math() {
+		numPage = 1
+		numPagetutorial1_math = 1
+		math_tutorial1_coverPage.style.display = 'none'
+		document.getElementById('math_tutorial1_page1').style.display = 'block'
+		pagination.style.display = 'block'
+		showPagination = true
+		var coordenatePagination = pagination.getBoundingClientRect()
+		let container = document.getElementById("container_math_tutorial1")
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		 	pagination.style.position  = 'absolute'
+		 	if(screen.height<container.scrollHeight){
+		 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		 	}
+		 	else{
+		 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			}
+			pagination.style.bottom = '0px'
+		 }
+	}
+
+	function initTutorial2_Math() {
+		numPage = 1
+		numPagetutorial2_math = 1
+		math_tutorial2_coverPage.style.display = 'none'
+		document.getElementById('math_tutorial2_page1').style.display = 'block'
+		//pagination.style.display = 'block'
+		// showPagination = true
+		// var coordenatePagination = pagination.getBoundingClientRect()
+		// let container = document.getElementById("container_math_tutorial2")
+		// if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		//  	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		//  	pagination.style.position  = 'absolute'
+		//  	if(screen.height<container.scrollHeight){
+		//  		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		//  	}
+		//  	else{
+		//  		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+		// 	}
+		// 	pagination.style.bottom = '0px'
+		//  }
+	}
+
+	document.getElementById('next').addEventListener("click", function(){
+		if(numPage < numberOfPages) {
+			let nextPage = numPage + 1
+			let actualPag = numPage
+			// if(tutorial_active == 'tutorial1_leng'){
+			// 	document.getElementById('leng_tutorial1_page'+ actualPag).style.display = 'none';
+			// 	document.getElementById('leng_tutorial1_page'+ nextPage).style.display = 'block';
+			// 	document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+			// 	document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active')
+			// 	++numPagetutorial1_leng
+			// }
+			if(tutorial_active == 'tutorial1_math') {
+				document.getElementById('math_tutorial1_page'+ actualPag).style.display = 'none';
+				document.getElementById('math_tutorial1_page'+ nextPage).style.display = 'block';
+				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active');
+				++numPagetutorial1_math	
+			}
+			// if(tutorial_active == 'tutorial2_leng') {
+			// 	document.getElementById('leng_tutorial2_page'+ actualPag).style.display = 'none';
+			// 	document.getElementById('leng_tutorial2_page'+ nextPage).style.display = 'block';
+			// 	document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+			// 	document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active');
+			// 	++numPagetutorial2_leng	
+			// }
+			// if(tutorial_active == 'tutorial3_leng') {
+			// 	document.getElementById('leng_tutorial3_page'+ actualPag).style.display = 'none';
+			// 	document.getElementById('leng_tutorial3_page'+ nextPage).style.display = 'block';
+			// 	document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+			// 	document.getElementById('dot'+ nextPage).classList.add('pagination__dot--active');
+			// 	++numPagetutorial3_leng	
+			// }
+			numPage = nextPage
+		}
+		var coordenatePagination = pagination.getBoundingClientRect()
+		let container = (tutorial_active=="tutorial1_math")?document.getElementById("container_math_tutorial1"): (tutorial_active=="tutorial1_leng")?document.getElementById("container_leng_tutorial1"): (tutorial_active=="tutorial2_leng")?document.getElementById("container_leng_tutorial2"): document.getElementById("container_leng_tutorial3")
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		 	pagination.style.position  = 'absolute'
+		 	if(screen.height < container.scrollHeight){
+		 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		 	}
+		 	else{
+		 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			}
+			pagination.style.bottom = '0px'
+		 }
+	})
+	document.getElementById('previous').addEventListener("click", function(){
+		if(numPage > 1) {
+			let previousPage = numPage - 1
+			let actualPag = numPage
+			// if(tutorial_active == 'tutorial1_leng'){
+			// 	document.getElementById('leng_tutorial1_page'+ actualPag).style.display = 'none';
+			// 	document.getElementById('leng_tutorial1_page'+ previousPage).style.display = 'block';
+			// 	document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+			// 	document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
+			// 	--numPagetutorial1_leng
+			// }
+			if(tutorial_active == 'tutorial1_math') {
+				document.getElementById('math_tutorial1_page'+ actualPag).style.display = 'none';
+				document.getElementById('math_tutorial1_page'+ previousPage).style.display = 'block';
+				document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
+				--numPagetutorial1_math
+			}
+			// if(tutorial_active == 'tutorial2_leng') {
+			// 	document.getElementById('leng_tutorial2_page'+ actualPag).style.display = 'none';
+			// 	document.getElementById('leng_tutorial2_page'+ previousPage).style.display = 'block';
+			// 	document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+			// 	document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
+			// 	--numPagetutorial2_leng
+			// }
+			// if(tutorial_active == 'tutorial3_leng') {
+			// 	document.getElementById('leng_tutorial3_page'+ actualPag).style.display = 'none';
+			// 	document.getElementById('leng_tutorial3_page'+ previousPage).style.display = 'block';
+			// 	document.getElementById('dot'+ actualPag).classList.remove('pagination__dot--active');
+			// 	document.getElementById('dot'+ previousPage).classList.add('pagination__dot--active')
+			// 	--numPagetutorial3_leng
+			// }
+			numPage = previousPage
+		}
+		var coordenatePagination = pagination.getBoundingClientRect()
+		let container = (tutorial_active=="tutorial1_math")?document.getElementById("container_math_tutorial1"): (tutorial_active=="tutorial1_leng")?document.getElementById("container_leng_tutorial1"): (tutorial_active=="tutorial2_leng")?document.getElementById("container_leng_tutorial2"): document.getElementById("container_leng_tutorial3")
+		if((coordenatePagination.left + coordenatePagination.height )< screen.height){
+		 	console.log(screen.height, coordenatePagination.height, container.scrollHeight)
+		 	pagination.style.position  = 'absolute'
+		 	if(screen.height<container.scrollHeight){
+		 		pagination.style.top = container.scrollHeight + coordenatePagination.height + 100 + 'px'
+		 	}
+		 	else{
+		 		pagination.style.top= screen.height - coordenatePagination.height + 'px'
+			}
+			pagination.style.bottom = '0px'
+		 }
+	})
+	</script>
+</body>
+</html>
