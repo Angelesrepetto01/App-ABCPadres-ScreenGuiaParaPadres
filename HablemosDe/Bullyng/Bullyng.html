@@ -70,6 +70,139 @@
 			outline: none;
 			box-shadow: none;
 		}
+
+		.whatis_bullying {
+			color: #674b98;
+			margin-top: 20px;
+			font-size: 20px;
+		}
+
+		.container {
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+
+		.parrafo {
+			color: #38393b;
+			font-size: 13px;
+			line-height: 1.5em;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		.parrafo__morado {
+			color: #674b98;
+			font-size: 15px;
+			line-height: 1.5em;
+			text-align: justify;
+			text-justify: inter-word;
+		}
+
+		.boton {
+			border: none;
+			color: white;
+			padding: 12px;
+			text-align: center;
+			text-decoration: none;
+			width: 80%;
+			margin: 4px 2px;
+			cursor: pointer;
+			border-radius: 8px;
+			outline: none;
+			box-shadow: none;
+		}
+
+		.container__buttons__circle {
+			margin-top: 20px;
+			display: inline;
+		}
+
+		.leer_mas {
+			color: white;
+			background-color: #674b98;
+		}
+
+		.donde_buscarayuda {
+			color: white;
+			background-color: #adc700;
+		}
+
+		.circle__sabiasque {
+			width: 80px;
+			height: 80px;
+			color: white;
+			margin: auto;
+			background: #adc700;
+			text-align: center;
+			-moz-border-radius: 50px;
+			-webkit-border-radius: 50px;
+			border-radius: 50px;
+		}
+
+		.setenta__weight {
+			float:left;
+			width: 60%;
+		}
+
+		.treinta__weight {
+			float:left;
+			width: 40%;
+		}
+
+		.pagination {
+			position: relative;
+			bottom: 5px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			text-align: center;
+		}
+
+		.pagination__dot {
+			position: relative;
+			width: 8px;
+			height: 8px;
+			border: 2px solid gray;
+			border-radius: 100px;
+			display: inline-block;
+			cursor: pointer;
+			margin: 0 4px;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+
+		.pagination__next_privous {
+			position: relative;
+			display: inline-block;
+			cursor: pointer;
+			font-size: 5vh;
+			color: grey;
+			margin: 0 50px;
+			-webkit-transition: .3s;
+			transition: .3s;
+		}
+
+		.pagination__dot--active {
+			background: gray;
+		}
+
+		ul {
+			padding-left: 10%;
+			margin-right: 10%;
+		}
+
+		li {
+			color: #674b98;
+			font-size: 40px;
+			margin-bottom: 3%
+		}
+
+		.imagen {
+			vertical-align: middle;
+			display: inline-block;
+			height: 100%
+		}
+
 	</style>
 </head>
 
@@ -83,14 +216,226 @@
 			<button class="back" onclick="back()">&#60;</button>
 		</div>
 
-		<div id='home'>
-			<div>¿Qué es el Bullying?</div>
-			<p>El bullying o acoso escolar, es un comportamiento agresivo e intencional que se produce entre compañeros en él ámbito escolar.</p>
+		<!-- layout principal -->
+
+		<div id='home' class="container">
+			<div class="whatis_bullying">¿Qué es el Bullying?</div>
+			<p class="parrafo">El bullying o acoso escolar, es un comportamiento agresivo e intencional que se produce entre compañeros en él ámbito escolar.</p>
 			<iframe class="video" src="https://www.youtube.com/embed/Iq0fG2EMuNU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+			<br></br>
+
+			<!-- contenedor de botones -->
+
+			<div class="container__buttons__circle">
+
+				<div class="setenta__weight">
+					<button class="boton leer_mas" onclick="readMore()">Leer más</button> </br>
+					<button class="boton donde_buscarayuda" onclick="searchHelp()">¿Donde buscar ayuda?</button>
+				</div>
+
+				<div class="treinta__weight">
+					<div class="circle__sabiasque" onclick="didYouKnowWhat()">
+							<br align="center">¿Sabias que?</br>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- layout leer mas -->
+		<div id="leermas__container" class="container" style="display: none">
+
+			<!-- pagina 1 -->
+			<div id="leermas__page1">
+
+					<p class="parrafo">El bullying o acoso escolar, es un comportamiento agresivo e intencional que se produce entre compañeros en el ámbito escolar.</p>
+					<ul>
+						<li class="parrafo__morado">Puede presentarse de distintas maneras: física, verbal, psicológica y virtual:</li>
+					</ul>
+					<p class="parrafo">También incluye otras modalidades, tales como las amenazas y los actos discriminatorios por: orientación sexual, condición socioeconómica, creencias religiosas, nacionalidad, etc.</p>
+
+			</div>
+
+			<!-- pagina 2 -->
+			<div id="leermas__page2" style="display: none">
+
+					<ul>
+						<li class="parrafo__morado">¿Quiénes intervienen?</li>
+					</ul>
+
+					<p class="parrafo">1. El acosador: normalmente, por problemas de autoestima, necesita manifestar su poder humillando a otro.</p>
+					<p class="parrafo">2. El ayudante del acosador: es quien coopera con el agresor.</p>
+					<p class="parrafo">3. La víctima: quien recibe las agresiones.</p>
+					<p class="parrafo">4. Los espectadores: aquellos que ven la agresión desde afuera y pueden convertirse en alentadores del hecho o en sujetos pasivos.</p>
+
+			</div>
+
+			<!-- layout paginacion -->
+			<div class="pagination" id='pagination' >
+				<div class="pagination__next_privous" id="previous">&laquo;</div>
+				<div id="pagitation_dots" style="display: inline-block;">
+				</div>
+				<div class="pagination__next_privous" id="next">&raquo;</div>
+			</div>
+
+		</div>
+
+		<!-- layout buscar ayuda -->
+		<div id="buscarayuda__container" class="container" style="display: none">
+
+				<div class="whatis_bullying">¿Dónde busco ayuda?</div>
+				<p class="parrafo">Dirección Provincial de Educación Secundaria</p>
+				<p class="parrafo">Calle 12 y 51, Torre 1, piso 12 (0221) 429-5279 / 429-5417</p>
+				<p class="parrafo">dpesec@ed.gba.gov.ar</p>
+				<p class="parrafo">Horario de 8 a 18hs</p>
+
+		</div>
+
+		<!-- layout sabias que -->
+		<div id="sabiasque__container" class="container" style="display: none">
+
+				<img class="imagen" src="assets/img/01_bullying_infografia.png">
+
 		</div>
 
 	</div>
 	<script>
+		let home = document.getElementById('home');
+		let pagination = document.getElementById('pagination');
+		let leermas__container = document.getElementById('leermas__container')
+		let sabiasque__container = document.getElementById('sabiasque__container');
+		let buscarayuda__container = document.getElementById('buscarayuda__container');
+		let navigation = [];
+		let actualScreen = null;
+		let showPagination = false;
+
+		leermas__container.style.display = 'none'
+		buscarayuda__container.style.display = 'none'
+		sabiasque__container.style.display = 'none'
+		pagination.style.display = 'none'
+
+		let numPage = 0;
+		let numberOfPages = 0;
+
+		/**
+		 * Function to show leer mas section
+		 */
+		function readMore() {
+			home.style.display = 'none';
+			leermas__container.style.display = 'block';
+			navigation.push(home);
+			actualScreen = leermas__container;
+
+			numberOfPages = 2;
+
+			showPagination = true;
+			createDots(numberOfPages);
+
+			pagination.style.display = 'block';
+		}
+
+		/**
+		 * Function to show buscar ayuda section
+		 */
+		function searchHelp() {
+			home.style.display = 'none';
+			buscarayuda__container.style.display = 'block';
+
+			navigation.push(home);
+			actualScreen = buscarayuda__container;
+
+		}
+
+		/**
+		 * Function to show sabias que section
+		 */
+		 function didYouKnowWhat() {
+			home.style.display = 'none';
+			sabiasque__container.style.display = 'block';
+
+			navigation.push(home);
+			actualScreen = sabiasque__container;
+
+		}
+
+		/**
+		 * Function to show dots for pagination
+		 * @param int	numDots	Numero de puntos.
+		 */
+		function createDots(numDots) {
+			let listDots = document.getElementById('pagitation_dots')
+			while (listDots.hasChildNodes()) {
+				listDots.removeChild(listDots.firstChild);
+			}
+			for (var i = 1; i <= numDots; i++) {
+				let element = '<div class="pagination__dot" id="dot' + i + '"></div>'
+				document.getElementById('pagitation_dots').insertAdjacentHTML('beforeend', element);
+			}
+			let dot_active = numPage ? numPage : 1
+			document.getElementById('dot' + dot_active).classList.add('pagination__dot--active')
+
+		}
+
+		/**
+		 * Function to show back button
+		 */
+		function back() {
+			if (showPagination) {
+				pagination.style.display = 'none'
+			}
+
+			if (navigation.length > 0) {
+				actualScreen.style.display = 'none'
+				navigation[navigation.length - 1].style.display = 'block'
+				actualScreen = navigation.pop()
+			}
+		}
+
+		document.getElementById('next').addEventListener("click", function () {
+
+			if (numPage < numberOfPages) {
+				let actualPag = ( numPage == 0 ) ? 1 : numPage;
+				let nextPage = actualPag + 1;
+
+				document.getElementById('leermas__page' + actualPag).style.display = 'none';
+				document.getElementById('leermas__page' + nextPage).style.display = 'block';
+				document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot' + nextPage).classList.add('pagination__dot--active');
+
+				numPage = nextPage
+			}
+
+			var coordenatePagination = pagination.getBoundingClientRect()
+			if ((coordenatePagination.x + coordenatePagination.height) < screen.height) {
+				pagination.style.position = 'absolute'
+				pagination.style.top = screen.height - coordenatePagination.height + 'px'
+				pagination.style.bottom = '0px'
+			}
+
+		})
+
+		document.getElementById('previous').addEventListener("click", function () {
+			if (numPage > 1) {
+				let previousPage = numPage - 1;
+				let actualPag = numPage;
+
+				document.getElementById('leermas__page' + actualPag).style.display = 'none';
+				document.getElementById('leermas__page' + previousPage).style.display = 'block';
+				document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+				document.getElementById('dot' + previousPage).classList.add('pagination__dot--active');
+
+				numPage = previousPage;
+			}
+
+			var coordenatePagination = pagination.getBoundingClientRect()
+			if ((coordenatePagination.x + coordenatePagination.height) < screen.height) {
+				pagination.style.position = 'absolute'
+				pagination.style.top = screen.height - coordenatePagination.height + 'px'
+				pagination.style.bottom = '0px'
+			}
+		})
 
 	</script>
 </body>
