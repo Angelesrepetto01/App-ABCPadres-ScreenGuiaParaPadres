@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: 'DinRegular';
+      src: url('../Tipografia/DINNextRoundedLTPro-Regular.otf') format('opentype');
+    }
+
+    body {
+      font-family: 'DinREgular'
+    }
+
+    .main {
+      background-color: #ffffff;
+    }
+
+    .header {
+      background-color: #f4f4f4;
+      /* overflow: hidden; */
+      padding-left: 3%;
+      height: 7vh
+    }
+
+    .imagen {
+      vertical-align: middle;
+      display: inline-block;
+      height: 100%
+    }
+
+    .back {
+      height: 100%;
+      float: right;
+      width: 15%;
+      color: white;
+      font-size: 30px;
+      background-color: #cccccc;
+      box-shadow: none;
+      border: none;
+      outline: none
+    }
+
+    .mainMenu {
+      padding-top: 10%;
+      padding-bottom: 10%;
+      text-align: center
+    }
+
+    .caption {
+      vertical-align: middle;
+      text-align: left;
+      display: inline-block;
+      width: 50%
+    }
+
+    .buttonStyle {
+      border: none;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      width: 40%;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 8px;
+      outline: none;
+      box-shadow: none;
+    }
+
+    .titleThemesMenu {
+      padding-top: 10%;
+      padding-bottom: 10%;
+      padding-left: 5%;
+      border-bottom: 2px solid #dbdbdb
+    }
+
+    .imagen2 {
+      vertical-align: middle;
+      display: inline-block;
+      height: 8vh
+    }
+
+    .titleTheme {
+      background-color: #f7f7f7;
+      height: 12vh;
+      padding-left: 8%;
+      padding-top: 5%;
+      border-bottom: 2px solid #dbdbdb
+    }
+
+    .forward {
+      float: right;
+      padding-right: 8vw;
+      padding-top: 2vh;
+      background-color: #f7f7f7;
+      color: grey;
+      border: none;
+      box-shadow: none;
+      font-size: 30px;
+    }
+
+    .buttonInitTutorial {
+      background-color: #adc700;
+      border: none;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 8px;
+    }
+
+    .circle {
+      vertical-align: middle;
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 100px;
+      margin: 8px;
+    }
+
+    .boxGray {
+      background-color: #acacac;
+      border-radius: 5px;
+      display: inline-block;
+      padding: 5px;
+    }
+
+    .imgTutorial {
+      width: 100%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .pagination {
+      position: relative;
+      /* bottom: 5px; */
+      left: 0;
+      right: 0;
+      margin: auto;
+      text-align: center;
+    }
+
+    .pagination__dot {
+      position: relative;
+      width: 8px;
+      height: 8px;
+      border: 2px solid gray;
+      border-radius: 100px;
+      display: inline-block;
+      cursor: pointer;
+      margin: 0 4px;
+      -webkit-transition: .3s;
+      transition: .3s;
+    }
+
+    .pagination__next_privous {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 5vh;
+      color: grey;
+      margin: 0 50px;
+      -webkit-transition: .3s;
+      transition: .3s;
+    }
+
+    .pagination__dot--active {
+      background: gray;
+    }
+
+    /* The Modal (background) */
+
+    .modal {
+      display: none;
+      /* Hidden by default */
+      position: fixed;
+      /* Stay in place */
+      z-index: 1;
+      /* Sit on top */
+      left: 0;
+      top: 0;
+      width: 100%;
+      /* Full width */
+      height: 100%;
+      /* Full height */
+      overflow: auto;
+      /* Enable scroll if needed */
+      background-color: rgb(0, 0, 0);
+      /* Fallback color */
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Black w/ opacity */
+    }
+
+    /* Modal Content/Box */
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      /* 15% from the top and centered */
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      /* Could be more or less, depending on screen size */
+      border-radius: 10px;
+    }
+
+    /* The Close Button */
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="header">
+      <img class="imagen" src="assets/MenuPrincipal/01_icono_menu_p.png">
+      <div class="caption">
+        <span>PRIMARIA: 3er año</span>
+      </div>
+      <button class="back" onclick="back()">
+        <</button>
+    </div>
+
+    <div id='home'>
+      <div class="mainMenu">
+        <img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+        <span class="caption">PRÁCTICAS DEL LENGUAJE</span>
+        <div style="padding-top: 5%">
+          <button class="buttonStyle" style="background-color: #adc700" onclick="enterLeng()">Tutoriales</button>
+          <button class="buttonStyle" style="background-color: #adc700">Aprender jugando</button>
+        </div>
+      </div>
+      <div class="mainMenu" style="background-color: #f7f7f7">
+        <img style="margin-left: -15%; height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+        <span class="caption">MATEMÁTICA</span>
+        <div style="padding-top: 5%">
+          <button class="buttonStyle" style="background-color: #674b98" onclick="enterMath()">Tutoriales</button>
+          <button class="buttonStyle" style="background-color: #674b98">Aprender jugando</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="themesMenuMath" style="display: none">
+      <div class="titleThemesMenu">
+        <img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+        <span class="caption" style="color: #674b98; font-weight: bold;">MATEMÁTICA</span>
+      </div>
+      <div class="titleTheme">
+        <img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+        <span class="caption">SUMA Y RESTA</span>
+        <button onclick="sumas()" class="forward">></button>
+      </div>
+    </div>
+
+    <div id="themesMenuLeng" style="display: none">
+      <div class="titleThemesMenu">
+        <img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+        <span class="caption" style="color: #adc700; font-weight: bold;">PRÁCTICAS DEL LENGUAJE</span>
+      </div>
+      <div class="titleTheme">
+        <img style="height: 50px" class="imagen2" src="assets/PracticasLenguaje/03_icono_practicas_tutorial1.png">
+        <span class="caption">Ortografía y puntuación</span>
+        <button onclick="ortografia()" class="forward">></button>
+      </div>
+    </div>
+
+    <div id="pickTutorialMath" style="display: none">
+      <div class="titleThemesMenu">
+        <img style="height: 50px" class="imagen" src="assets/MenuPrincipal/01_icono_menu_matematica.png">
+        <span class="caption" style="color: #674b98; font-weight: bold;">SUMA Y RESTA</span>
+      </div>
+      <div class="titleTheme">
+        <img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+        <span class="caption">TUTORIAL 1</span>
+        <button class="forward" onclick="goto_tutorial1_math()">></button>
+      </div>
+      <div class="titleTheme">
+        <img style="height: 50px" class="imagen2" src="assets/Matematica/01_icono_mat_sumaresta.png">
+        <span class="caption">TUTORIAL 2</span>
+        <button class="forward" onclick="goto_tutorial2_math()">></button>
+      </div>
+    </div>
+
+    <div id="pickTutorialLeng" style="display: none">
+      <div class="titleThemesMenu">
+        <img class="imagen" src="assets/MenuPrincipal/01_icono_menu_practicas.png">
+        <span class="caption" style="color: #adc700; font-weight: bold;">ORTOGRAFÍA Y PUNTUACIÓN</span>
+      </div>
+      <div class="titleTheme">
+        <img class="imagen2" src="assets/PracticasLenguaje/03_icono_practicas_tutorial1.png">
+        <span class="caption">ORTOGRAFÍA: USO DE LA “MB” / “MP” / “NV”</span>
+        <button onclick="goto_tutorial1_leng()" class="forward">></button>
+      </div>
+      <div style="background-color: white" class="titleTheme">
+        <img class="imagen2" src="assets/PracticasLenguaje/03_icono_practicas_tutorial1a.png">
+        <span class="caption">PUNTUACIÓN</span>
+        <button style="background-color: white" class="forward">></button>
+      </div>
+      <div style="background-color: white" class="titleTheme">
+        <img class="imagen2" src="assets/PracticasLenguaje/03_icono_practicas_tutorial1b.png">
+        <span class="caption">CONSEJOS Y EJERCICIOS</span>
+        <button style="background-color: white" class="forward">></button>
+      </div>
+    </div>
+
+    <div id="container_math_tutorial1" style="display: none">
+      <div id="math_tutorial1_coverPage" style="text-align: center;">
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1.png">
+        <p>
+          <span style="color: #674b89;"> Lucas tiene</span>
+          <span style="color: #adc700;">$365</span>
+          <span style="color: #674b89;">le presta a Marcos</span>
+          <span style="color: #adc700;">$170.</span>
+        </p>
+        <p>
+          ¿Cuánto dinero le queda a Lucas?
+        </p>
+
+        <button class="buttonInitTutorial" id="init" onclick="initTutorial1_Math()">
+          <span>!APRENDE A RESOLVERLO!</span>
+        </button>
+
+      </div>
+
+      <div id="math_tutorial_page1" style="display: none">
+        <div>
+          <div class="circle" style="background-color: #674b89;"></div>
+          <h3 style="display: inline-block;">Primera resolución posible</h3>
+        </div>
+
+        <p>Sumar, a partir de
+          <strong> $170</strong> , hasta llegar a
+          <strong>365</strong> apoyándose en resultados conocidos. Por ejemplo:
+        </p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1b.png" class="imgTutorial">
+
+        <p>Entonces el calculo seria:</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1c.png" class="imgTutorial" style="width: 70%;">
+
+        <p>Por lo tanto, el resultado de la resta (365 - 170) se obtiene sumando</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1d.png" class="imgTutorial" style="width: 85%;">
+
+        <div class="boxGray">
+          <div style="float: left; width: 20%;">
+            <img src="assets/Matematica/03_icono_mat_tutorial1e.png" class="imgTutorial" style="width: 50%;">
+          </div>
+          <div style="float: left; width: 80%;">
+            ¿Sabías que esta forma de resolución se apoya en el uso de la resta como distancia entre dos números? Para averiguar la distancia
+            que hay entre dos números, podemos colocarlos en la recta numérica y contar cuántos números enteros hay entre
+            ellos.
+          </div>
+        </div>
+
+      </div>
+
+      <div id="math_tutorial_page2" style="display: none">
+        <div>
+          <div class="circle" style="background-color: #674b89;"></div>
+          <h3 style="display: inline-block;">Segunda resolución posible</h3>
+        </div>
+
+        <p> Descomponer el 365 y el 170 en forma aditiva y luego restarlos utilizando el <span id='selectAlgoritmo'><strong> algoritmo</strong></span> tradicional de la resta, que es en columnas</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1g.png" class="imgTutorial" style="width: 60%;">
+
+        <p>Esto significa restar ambas igualdades respetando las columnas</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1h.png" class="imgTutorial" style="width: 70%;">
+
+        <p>Luego se suman los resultados parciales (100 + 30 + 65)</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1i.png" class="imgTutorial" style="width: 50%;">
+
+      <!-- The Modal -->
+      <div id="modalAboutAlgoritmo" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content" style="background-color: #adc700;">
+          <span class="close">&times;</span>
+          <p style="color: white">Algoritmo: <br>
+              Conjunto ordenado de operaciones que permite hacer un cálculo y hallar la solución de un tipo de problema.</p>
+        </div>
+
+      </div>
+
+
+      </div>
+
+
+      <div id="math_tutorial_page3" style="display: none">
+        <div>
+          <div class="circle" style="background-color: #674b89;"></div>
+          <h3 style="display: inline-block;">Tercera resolución posible</h3>
+        </div>
+
+        <p>Descomponer sólo el número 170 e ir restándolo de a poco, apoyándose en resultados conocidos, como por ejemplo:</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1j.png" class="imgTutorial" style="width: 50%;">
+
+        <p>Entonces</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1k.png" class="imgTutorial" style="width: 50%;">
+        <p>Haciendo las restas:</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1l.png" class="imgTutorial" style="width: 50%;">
+        <p>Por lo tanto</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial1m.png" class="imgTutorial" style="width: 50%;">
+
+        <div>
+          <img class="imagen" src="assets/Matematica/03_icono_mat_tutorial1n.png">
+          <div class="caption">
+            <span>Para tener en cuenta</span>
+          </div>
+
+          <p>En estos primeros años, los niños eligen restar por ciertos números que son fáciles porque obtienen números redondos
+            (terminados en cero y se apoya en sumas que dan 10,100).</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="container_math_tutorial2" style="display: none">
+      <div id="math_tutorial2_coverPage" style="text-align: center;">
+
+        <img src="assets/Matematica/03_icono_mat_tutorial2.png">
+        <p>
+          <span style="color: #674b89;"> ¿Cuál es el resultado de esta resta</span>
+          <span style="color: #adc700;">503 - 287</span>
+          <span style="color: #674b89;">?</span>
+        </p>
+
+        <button class="buttonInitTutorial" id="init" onclick="initTutorial2_Math()">
+          <span>!APRENDE A RESOLVERLO!</span>
+        </button>
+
+      </div>
+
+      <div id="math_tutorial2_page1" style="display: none">
+        <div>
+          <div class="circle" style="background-color: #674b89;"></div>
+          <h3 style="display: inline-block;">Primera resolución posible</h3>
+        </div>
+
+        <p> Descomponer al 503 y al 287 de forma aditiva y luego restar.</p>
+
+        <p>
+          <strong> Descomponer en forma aditiva un número significa expresarlo a través de una suma. Por ejemplo:</strong>
+        </p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial2b.png" class="imgTutorial" style="width: 80%">
+
+        <p>Si eligen descoponer al 503 como 400 + 90 + 13 y al 287 como 200 + 80 + 7, la resta seria asi:</p>
+
+        <img src="assets/Matematica/03_icono_mat_tutorial2c.png" class="imgTutorial" style="width: 60%;">
+
+      </div>
+
+    </div>
+
+    <div class="pagination" id='pagination' style="display: none">
+      <div class="pagination__next_privous" id="previous">&laquo;</div>
+      <div id="pagitation_dots" style="display: inline-block;">
+      </div>
+      <div class="pagination__next_privous" id="next">&raquo;</div>
+    </div>
+
+
+  </div>
+
+  <script>
+    let home = document.getElementById('home');
+    let themesMenuLeng = document.getElementById('themesMenuLeng')
+    let themesMenuMath = document.getElementById('themesMenuMath');
+    let pickTutorialLeng = document.getElementById('pickTutorialLeng');
+    let pickTutorialMath = document.getElementById('pickTutorialMath');
+    let container_math_tutorial1 = document.getElementById('container_math_tutorial1');
+    let math_tutorial1_coverPage = document.getElementById('math_tutorial1_coverPage');
+    let container_math_tutorial2 = document.getElementById('container_math_tutorial2');
+    let math_tutorial2_coverPage = document.getElementById('math_tutorial2_coverPage');
+
+
+    let pagination = document.getElementById('pagination');
+    let navigation = [];
+    let actualScreen = null;
+    let showPagination = false;
+    let tutorial_active = null;
+
+    let numPage = 0;
+    let numPagetutorial1_math = 0;
+    let numPagetutorial1_leng = 0;
+    let numberOfPages = 0
+
+
+    function back() {
+      if (showPagination) {
+        pagination.style.display = 'none'
+      }
+
+      if (navigation.length > 0) {
+        actualScreen.style.display = 'none'
+        navigation[navigation.length - 1].style.display = 'block'
+        actualScreen = navigation.pop()
+      }
+    }
+
+    function enterMath() {
+      home.style.display = 'none'
+      themesMenuMath.style.display = 'block'
+      navigation.push(home)
+      actualScreen = themesMenuMath
+    }
+
+    function enterLeng() {
+      home.style.display = 'none'
+      themesMenuLeng.style.display = 'block'
+      navigation.push(home)
+      actualScreen = themesMenuLeng
+    }
+
+    function ortografia() {
+      themesMenuLeng.style.display = 'none'
+      pickTutorialLeng.style.display = 'block'
+      navigation.push(themesMenuLeng)
+      actualScreen = pickTutorialLeng
+    }
+
+    function sumas() {
+      themesMenuMath.style.display = 'none'
+      pickTutorialMath.style.display = 'block'
+      navigation.push(themesMenuMath)
+      actualScreen = pickTutorialMath
+    }
+
+    let firstIntoTutorial1Math = true;
+    function goto_tutorial1_math() {
+      numPage = numPagetutorial1_math
+      // console.log('numpage, math, leng',numPage, numPagetutorial1_math, numPagetutorial1_leng)
+      tutorial_active = 'tutorial1_math'
+      pickTutorialMath.style.display = 'none'
+      container_math_tutorial1.style.display = 'block'
+      navigation.push(pickTutorialMath)
+      actualScreen = container_math_tutorial1
+      // coverPageMat.style.display = 'block'
+      numberOfPages = 3
+      createDots(numberOfPages)
+
+      if (numPage > 1) {
+        pagination.style.display = 'block';
+      }
+    }
+
+    function initTutorial1_Math() {
+      numPage = 1
+      numPagetutorial1_math = 1
+      math_tutorial1_coverPage.style.display = 'none'
+      document.getElementById('math_tutorial_page1').style.display = 'block'
+      pagination.style.display = 'block'
+      showPagination = true
+
+      var coordenatePagination = pagination.getBoundingClientRect()
+      var sizeMain = document.querySelector('.main').getBoundingClientRect();
+      if ((sizeMain.top + sizeMain.height) < screen.height) {
+        pagination.style.position = 'absolute'
+        pagination.style.top = screen.height - coordenatePagination.height + 'px'
+      } else {
+        pagination.style.position = 'absolute'
+        pagination.style.top = sizeMain.height + sizeMain.top + 'px'
+      }
+    }
+
+    function goto_tutorial2_math() {
+      tutorial_active = 'tutorial2_math'
+      pickTutorialMath.style.display = 'none'
+      container_math_tutorial2.style.display = 'block'
+      navigation.push(pickTutorialMath)
+      actualScreen = container_math_tutorial2
+
+    }
+
+    function initTutorial2_Math() {
+      math_tutorial2_coverPage.style.display = 'none'
+      document.getElementById('math_tutorial2_page1').style.display = 'block'
+    }
+
+
+
+    function createDots(numDots) {
+      let listDots = document.getElementById('pagitation_dots')
+      while (listDots.hasChildNodes()) {
+        listDots.removeChild(listDots.firstChild);
+      }
+      for (var i = 1; i <= numDots; i++) {
+        let element = '<div class="pagination__dot" id="dot' + i + '"></div>'
+        document.getElementById('pagitation_dots').insertAdjacentHTML('beforeend', element);
+      }
+      let dot_active = numPage ? numPage : 1
+      document.getElementById('dot' + dot_active).classList.add('pagination__dot--active')
+
+    }
+    
+    document.getElementById('next').addEventListener("click", function () {
+      if (numPage < numberOfPages) {
+        let nextPage = numPage + 1
+        let actualPag = numPage
+        if (tutorial_active == 'tutorial1_leng') {
+          document.getElementById('leng_tutorial1_page' + actualPag).style.display = 'none';
+          document.getElementById('leng_tutorial1_page' + nextPage).style.display = 'block';
+          document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+          document.getElementById('dot' + nextPage).classList.add('pagination__dot--active')
+          ++numPagetutorial1_leng
+        }
+        if (tutorial_active == 'tutorial1_math') {
+          document.getElementById('math_tutorial_page' + actualPag).style.display = 'none';
+          document.getElementById('math_tutorial_page' + nextPage).style.display = 'block';
+          document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+          document.getElementById('dot' + nextPage).classList.add('pagination__dot--active');
+          ++numPagetutorial1_math
+        }
+        numPage = nextPage
+      }
+
+      var coordenatePagination = pagination.getBoundingClientRect()
+      var sizeMain = document.querySelector('.main').getBoundingClientRect();
+      if ((sizeMain.top + sizeMain.height) < screen.height) {
+        pagination.style.position = 'absolute'
+        pagination.style.top = screen.height - coordenatePagination.height + 'px'
+      } else {
+        pagination.style.position = 'absolute'
+        pagination.style.top = sizeMain.height + sizeMain.top + 'px'
+      }
+
+    })
+
+    document.getElementById('previous').addEventListener("click", function () {
+      if (numPage > 1) {
+        let previousPage = numPage - 1
+        let actualPag = numPage
+        if (tutorial_active == 'tutorial1_leng') {
+          document.getElementById('leng_tutorial1_page' + actualPag).style.display = 'none';
+          document.getElementById('leng_tutorial1_page' + previousPage).style.display = 'block';
+          document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+          document.getElementById('dot' + previousPage).classList.add('pagination__dot--active')
+          --numPagetutorial1_leng
+        }
+        if (tutorial_active == 'tutorial1_math') {
+          document.getElementById('math_tutorial_page' + actualPag).style.display = 'none';
+          document.getElementById('math_tutorial_page' + previousPage).style.display = 'block';
+          document.getElementById('dot' + actualPag).classList.remove('pagination__dot--active');
+          document.getElementById('dot' + previousPage).classList.add('pagination__dot--active')
+          --numPagetutorial1_math
+        }
+        numPage = previousPage
+      }
+
+      var coordenatePagination = pagination.getBoundingClientRect()
+      var sizeMain = document.querySelector('.main').getBoundingClientRect();
+      if ((sizeMain.top + sizeMain.height) < screen.height) {
+        pagination.style.position = 'absolute'
+        pagination.style.top = screen.height - coordenatePagination.height + 'px'
+      } else {
+        pagination.style.position = 'absolute'
+        pagination.style.top = sizeMain.height + sizeMain.top + 'px'
+      }
+    })
+
+    // Get the modal
+    var modalAboutAlgoritmo = document.getElementById('modalAboutAlgoritmo');
+
+    // Get the button that opens the modal
+    var aboutAlgoritmo = document.getElementById("selectAlgoritmo");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal 
+    aboutAlgoritmo.onclick = function () {
+      modalAboutAlgoritmo.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+      modalAboutAlgoritmo.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modalAboutAlgoritmo) {
+        modalAboutAlgoritmo.style.display = "none";
+      }
+    }
+
+
+  </script>
+</body>
+
+</html>
